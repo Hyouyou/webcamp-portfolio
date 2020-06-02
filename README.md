@@ -1,24 +1,24 @@
-# README
+# 銭_get_back(投稿サイト)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+フリマアプリでの販売情報や、捨てる物で得をした経験等の投稿サイト
 
-Things you may want to cover:
+## サイトテーマ
+捨てる/売るの前に物の価値を確認する
 
-* Ruby version
+## テーマを選んだ理由
+物を売る際に生じる販売者の労力とリターンを知ってもらうため
+物を捨てる前に、それを使って得ができる情報がないか知ってもらうため
 
-* System dependencies
+## ターゲットユーザ
+フリマアプリを利用するユーザー
+掃除中の主婦・主夫
 
-* Configuration
+## 主な利用シーン
+フリマアプリに出品しようか迷っている時
+捨てる予定の物、不必要な物を捨てる前
 
-* Database creation
+## 設計書
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 機能一覧
+https://docs.google.com/spreadsheets/d/18nNeYdUgj9mBgI17-XtGfY8LJ-8Gch4CczlxL6HYXqo/edit#gid=0
