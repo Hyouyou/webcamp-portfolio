@@ -1,0 +1,33 @@
+<div class = "row">
+	<h1>投稿詳細</h1>
+	<div class = "col-xs-6 center-block">
+		<section class = "single-post">
+			<div class = "post-show">
+					<span class = "title-show">タイトル</span>
+					<%= @post.title %>
+				</div>
+				<div class = "form">
+					<span class = "body-show">説明</span>
+					<%= @post.explanation %>
+				</div>
+				<div class = "form">
+					<span class = "item-show">商品状態</span>
+					<%= @post.condetion %>
+				</div>
+				<div class = "form">
+					<span class = "burden-show">送料負担</span>
+					<%= @post.is_burden %>
+				</div>
+				<div class = "form">
+					<span class = "post-image-show">画像</span>
+					<%= @post.post_image %>
+				</div>
+		</section>
+	</div>
+
+	<div class = "col-xs-6 center-block">
+		<div class = "comment-table">
+			<!--コメントをtableで表示させる-->
+		</div>
+	</div>
+</div>
