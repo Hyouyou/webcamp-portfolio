@@ -1,2 +1,33 @@
-<h1>新規投稿作成</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<div class = "row">
+	<h1>新規投稿作成</h1>
+	<div class = "col-xs-6 col-xs-offset-3">
+		<div class = "new-form text-center">
+			<%= form_with model:@post, local: true do |f| %>
+				<div class = "form">
+					<span class = "title-info">タイトル</span>
+					<%= f.text_field :title %>
+				</div>
+				<div class = "form">
+					<span class = "body-info">説明</span>
+					<%= f.text_field :explanation %>
+				</div>
+				<div class = "form">
+					<span class = "item-info">商品状態</span>
+					<!--enumで列挙する-->
+				</div>
+				<div class = "form">
+					<span class = "burden-info">送料負担</span>
+					<!--プルダウンメニュー作る-->
+				</div>
+				<div class = "form">
+					<span class = "post-image-info">画像</span>
+					<!--ここにattachment-->
+				</div>
+				<div class = "action">
+					<%= f.submit "投稿" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
