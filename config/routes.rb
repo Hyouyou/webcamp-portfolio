@@ -4,4 +4,10 @@ Rails.application.routes.draw do
 
   root 'homes#top'
   get '/about' => 'homes#about'
+
+  resources :posts, only:[:new, :show, :create, :edit, :update, :destroy] do
+    collection do
+      get :search
+    end
+  end
 end
