@@ -1,8 +1,16 @@
 <div class = "row">
 	<h1>投稿編集</h1>
-	<div class = "col-xs-6 col-xs-offset-3">
-		<div class = "edit-form text-center">
-			<%= form_with model:@post, local: true do |f| %>
+	<%= form_with model:@post, local: true do |f| %>
+		<div class = "col-xs-5 col-xs-offset-1">
+			<div class = "post-edit-form">
+				<!--<span class = "user-image-info"></span>-->
+				<%= attachment_image_tag @post, :post_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+				<%= f.attachment_field :post_image, placeholder:"参考画像" %>
+			</div>
+		</div>
+
+		<div class = "col-xs-5">
+			<div class = "edit-form text-center">
 				<div class = "form">
 					<span class = "title-info">タイトル</span>
 					<%= f.text_field :title %>
@@ -26,8 +34,8 @@
 				<div class = "action">
 					<%= f.submit "投稿" %>
 				</div>
-			<% end %>
+			</div>
 		</div>
-	</div>
+	<% end %>
 </div>
 
