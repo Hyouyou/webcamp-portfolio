@@ -1,0 +1,20 @@
+<header>
+	<nav class = "nav-bar navbar-fixed-top">
+		<%= link_to root_path, class: "text-center" do %>
+			<h1 class = "logo">銭 get back</h1>
+		<% end %>
+
+		<% if user_signed_in? %>
+			<ul class = "nav-list navbar-nav navbar-right">
+				<li class = "nav-item"><%= link_to 'マイページ', user_path(current_user) %></li>
+				<li class = "nav-item"><%= link_to '新規投稿作成', new_post_path %></li>
+				<li class = "nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+			</ul>
+		<% else %>
+			<ul class = "nav-list navbar-nav navbar-right">
+				<li class = "nav-item"><%= link_to '新規登録', new_user_registration_path %></li>
+				<li class = "nav-item"><%= link_to 'ログイン', new_user_session_path %></li>
+			</ul>
+		<% end %>
+	</nav>
+</header>

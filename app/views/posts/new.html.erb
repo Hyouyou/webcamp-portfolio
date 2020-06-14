@@ -1,8 +1,15 @@
 <div class = "row">
 	<h1>新規投稿作成</h1>
-	<div class = "col-xs-6 col-xs-offset-3">
-		<div class = "new-form text-center">
-			<%= form_with model:@post, local: true do |f| %>
+	<%= form_with model:@post, local: true do |f| %>
+		<div class = "col-xs-5 col-xs-offset-1">
+			<div class = "new-post-img">
+				<%= attachment_image_tag @post, :post_image, :fill, 50, 50, fallback: "no_image.jpg" %>
+				<%= f.attachment_field :post_image %>
+			</div>
+		</div>
+
+		<div class = "col-xs-5">
+			<div class = "new-post-form">
 				<div class = "form">
 					<span class = "title-info">タイトル</span>
 					<%= f.text_field :title %>
@@ -12,22 +19,21 @@
 					<%= f.text_field :explanation %>
 				</div>
 				<div class = "form">
-					<span class = "item-info">商品状態</span>
-					<!--enumで列挙する-->
+					<span class = "condition-info">商品状態</span>
+					<%= f.select :condition, Post.conditions.keys %>
 				</div>
 				<div class = "form">
 					<span class = "burden-info">送料負担</span>
-					<!--プルダウンメニュー作る-->
-				</div>
-				<div class = "form">
-					<span class = "post-image-info">画像</span>
-					<!--ここにattachment-->
+					<% label :is_burden, "", value: true %>
+					<%= f.radio_button :is_burden, true %>出品者負担
+					<% label :is_burden, "", value: false %>
+					<%= f.radio_button :is_burden, false %>購入者負担
 				</div>
 				<div class = "action">
 					<%= f.submit "投稿" %>
 				</div>
-			<% end %>
+			</div>
 		</div>
-	</div>
+	<% end %>
 </div>
 
