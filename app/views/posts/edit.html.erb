@@ -20,16 +20,15 @@
 					<%= f.text_field :explanation %>
 				</div>
 				<div class = "form">
-					<span class = "item-info">商品状態</span>
-					<!--enumで列挙する-->
+					<span class = "condition-info">商品状態</span>
+					<%= f.select :condition, Post.conditions.keys %>
 				</div>
 				<div class = "form">
 					<span class = "burden-info">送料負担</span>
-					<!--プルダウンメニュー作る-->
-				</div>
-				<div class = "form">
-					<span class = "post-image-info">画像</span>
-					<!--ここにattachment-->
+					<% label :is_burden, "", value: true %>
+					<%= f.radio_button :is_burden, true %>出品者負担
+					<% label :is_burden, "", value: false %>
+					<%= f.radio_button :is_burden, false %>購入者負担
 				</div>
 				<div class = "action">
 					<%= f.submit "投稿" %>

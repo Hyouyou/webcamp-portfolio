@@ -6,24 +6,24 @@
 		</div>
 		<section class = "single-post">
 			<div class = "post-show">
-					<span class = "title-show">タイトル</span>
+					<span class = "title-show">タイトル：</span>
 					<%= @post.title %>
 				</div>
 				<div class = "form">
-					<span class = "body-show">説明</span>
+					<span class = "body-show">説明：</span>
 					<%= @post.explanation %>
 				</div>
 				<div class = "form">
-					<span class = "item-show">商品状態</span>
+					<span class = "item-show">商品状態：</span>
 					<%= @post.condition %>
 				</div>
 				<div class = "form">
-					<span class = "burden-show">送料負担</span>
-					<%= @post.is_burden %>
-				</div>
-				<div class = "form">
-					<span class = "post-image-show">画像</span>
-					<%= @post.post_image %>
+					<span class = "burden-show">送料負担：</span>
+					<% if @post.is_burden == true %>
+						<span>出品者負担</span>
+					<% else %>
+						<span>購入者負担</span>
+					<% end %>
 				</div>
 		</section>
 		<div class = "edit-user-btn">
