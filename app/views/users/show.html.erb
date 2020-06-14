@@ -21,7 +21,11 @@
 					<% @user.posts.each do |post| %>
 						<tr>
 							<td><%= post.created_at.strftime('%Y/%m/%d') %></td>
-							<td><%= post.title %></td>
+							<td>
+								<%= link_to post_path(post.id) do %>
+									<%= post.title %>
+								<% end %>
+							</td>
 						</tr>
 					<% end %>
 				<% else %>
