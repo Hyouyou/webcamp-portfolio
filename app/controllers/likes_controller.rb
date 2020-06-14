@@ -1,0 +1,18 @@
+class LikesController < ApplicationController
+
+	#いいねはajaxで通信させる
+
+	def create
+		post = Post.find(params[:id])
+		like = current_user.likes.new(post_id: post.id)
+		like.save
+		redirect_back(fallback_location: root_path)
+	end
+
+	def destroy
+		post = Post.find(params[:id])
+		like = current_user.likes.find_by(post_id: post.id)
+		like.destroy
+		redirect_back(fallback_location: root_path)
+	end
+end
