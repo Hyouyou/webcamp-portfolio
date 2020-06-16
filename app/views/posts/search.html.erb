@@ -1,0 +1,31 @@
+<div class = "row">
+	<div class = "col-md-8 col-md-offset-2">
+		<h3>検索結果一覧</h3>
+
+		<table class = "table table-hover">
+			<div class = "no-border">
+				<tr>
+					<th>投稿日時</th>
+					<th>投稿者ニックネーム</th>
+					<th>タイトル</th>
+				</tr>
+
+				<% if @results.present? %>
+					<% @results.each do |result| %>
+						<tr>
+							<td>
+								<%= link_to post_path(result.id) do %>
+								    <%= result.created_at.strftime('%Y/%m/%d') %>
+								<% end %>
+							</td>
+							<td><%= result.user.name %></td>
+							<td><%= result.title %></td>
+						</tr>
+					<% end %>
+				<% else %>
+				    <h3>該当する検索結果はありませんでした</h3>
+				<% end %>
+			</div>
+		</table>
+	</div>
+</div>

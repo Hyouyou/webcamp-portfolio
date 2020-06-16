@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
   end
@@ -28,6 +29,9 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
     redirect_to user_path(current_user)
+  end
+
+  def search
   end
 
   private
