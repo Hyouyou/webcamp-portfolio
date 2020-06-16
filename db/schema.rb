@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_14_103524) do
+ActiveRecord::Schema.define(version: 2020_06_16_015418) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_06_14_103524) do
     t.boolean "is_burden", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "selling_price"
   end
 
   create_table "users", force: :cascade do |t|

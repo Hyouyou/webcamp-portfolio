@@ -4,5 +4,6 @@ post1:
   user: user1
   title: test
   explanation: テスト
+  selling_price: 1000
   condition: 0
   is_burden: true
