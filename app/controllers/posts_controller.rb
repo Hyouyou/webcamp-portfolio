@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
   end
@@ -30,8 +31,11 @@ class PostsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def search
+  end
+
   private
   def post_params
-    params.require(:post).permit(:title, :explanation, :post_image_id, :condition, :is_burden)
+    params.require(:post).permit(:title, :explanation, :selling_price, :post_image_id, :condition, :is_burden)
   end
 end

@@ -15,12 +15,12 @@
 					<%= f.text_field :title %>
 				</div>
 				<div class = "form">
-					<span class = "body-info">説明</span>
-					<%= f.text_field :explanation %>
-				</div>
-				<div class = "form">
 					<span class = "condition-info">商品状態</span>
 					<%= f.select :condition, Post.conditions.keys %>
+				</div>
+				<div class = "form">
+					<span class = "sales-info">売上高</span>
+					<%= f.text_field :selling_price %>円
 				</div>
 				<div class = "form">
 					<span class = "burden-info">送料負担</span>
@@ -28,6 +28,10 @@
 					<%= f.radio_button :is_burden, true %>出品者負担
 					<% label :is_burden, "", value: false %>
 					<%= f.radio_button :is_burden, false %>購入者負担
+				</div>
+				<div class = "form">
+					<span class = "body-info"></span>
+					<%= f.text_area :explanation, size: "50x5", placeholder: "詳細な情報" %>
 				</div>
 				<div class = "action">
 					<%= f.submit "投稿" %>

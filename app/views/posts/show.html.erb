@@ -10,12 +10,12 @@
 					<%= @post.title %>
 				</div>
 				<div class = "form">
-					<span class = "body-show">説明：</span>
-					<%= @post.explanation %>
-				</div>
-				<div class = "form">
 					<span class = "item-show">商品状態：</span>
 					<%= @post.condition %>
+				</div>
+				<div class = "form">
+					<span class = "sales-show">売上高：</span>
+					<%= @post.selling_price %>円
 				</div>
 				<div class = "form">
 					<span class = "burden-show">送料負担：</span>
@@ -37,6 +37,10 @@
 							<%= @post.likes.count %>いいね
 						<% end%>
 					<% end %>
+				</div>
+				<div class = "form">
+					<span class = "body-show">説明：</span>
+					<%= @post.explanation %>
 				</div>
 		</section>
 		<div class = "edit-user-btn">
