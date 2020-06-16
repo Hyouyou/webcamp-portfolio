@@ -2,24 +2,27 @@
 	<div class = "col-md-8 col-md-offset-2">
 		<h3>検索結果一覧</h3>
 
-		<table class = "table table-hover">
+		<table class = "table table-border">
 			<div class = "no-border">
 				<tr>
-					<th>投稿日時</th>
-					<th>投稿者ニックネーム</th>
+					<th>投稿日</th>
+					<th>ニックネーム</th>
 					<th>タイトル</th>
 				</tr>
 
 				<% if @results.present? %>
 					<% @results.each do |result| %>
 						<tr>
+							<td><%= result.created_at.strftime('%Y/%m/%d') %></td>
+							<td>
+								<%= attachment_image_tag result.user, :user_image, size:"50x50", fallback: "no_image.jpg" %>
+								<%= result.user.name %>
+							</td>
 							<td>
 								<%= link_to post_path(result.id) do %>
-								    <%= result.created_at.strftime('%Y/%m/%d') %>
+									<%= result.title %>
 								<% end %>
 							</td>
-							<td><%= result.user.name %></td>
-							<td><%= result.title %></td>
 						</tr>
 					<% end %>
 				<% else %>
