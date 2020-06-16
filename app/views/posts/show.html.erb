@@ -2,7 +2,7 @@
 	<h1>投稿詳細</h1>
 	<div class = "col-xs-6 text-center">
 		<div class = "post-show-img">
-			<%= attachment_image_tag @post, :post_image, :fill, 50, 50, fallback: "no_image.jpg" %>
+			<%= attachment_image_tag @post, :post_image, :fill, 200, 200, fallback: "no_image.jpg" %>
 		</div>
 		<section class = "single-post">
 			<div class = "post-show">
@@ -49,6 +49,7 @@
 	</div>
 
 	<div class = "col-xs-6 center-block">
+		<%= render 'layouts/flash' %>
 		<div class = "comment-table">
 			<h3>質問一覧</h3>
 			<table class = "table table-border">
@@ -56,8 +57,13 @@
 					<% @post.comments.each do |comment| %>
 						<tr>
 							<td><%= comment.user.name %>さん</td>
+							<td><%= comment.comment %></td>
 							<td>
-								<%= comment.comment %>
+								<% if comment.user == current_user %>
+									<div class = "comment-delete-btn">
+										<%= link_to "delete", post_comment_path(@post, comment.id), method: :delete, class: "btn btn-danger", data: {confirm: '質問を削除します。よろしいですか？'} %>
+									</div>
+								<% end %>
 							</td>
 						</tr>
 					<% end %>
@@ -67,6 +73,7 @@
 			</table>
 		</div>
 
+		<%= render "layouts/error_message", model:@comment %>
 		<%= form_for [@post, @comment] do |f| %>
 			<div class = "new-comment-form">
 				<%= f.text_area :comment, size: "50x5", placeholder: "質問してみる" %>

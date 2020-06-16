@@ -1,17 +1,22 @@
 class CommentsController < ApplicationController
   def create
-  	post = Post.find(params[:id])
-  	comment = current_user.comments.new(comment_params)
-  	comment.post_id = post.id
-  	comment.save
-  	redirect_back(fallback_location: post_path)
+  	post = Post.find(params[:post_id])
+  	@comment = current_user.comments.new(comment_params)
+  	@comment.post_id = post.id
+  	if @comment.save
+      flash[:success]= "質問を受け付けました！"
+  	   redirect_to post_path(post.id)
+    else
+      @post = Post.find(params[:post_id])
+      flash[:danger] = "質問を削除しました"
+      render template: 'posts/show'
+    end
 
   end
 
   def destroy
-  	comment = Comment.find_by(id: params[:id], post_id: params[:past_id])
-  	comment.destroy
-  	redirect_to user_psth(current_user)
+  	Comment.find(params[:id]).destroy
+  	redirect_to user_path(current_user)
   end
 
   private

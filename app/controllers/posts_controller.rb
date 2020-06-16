@@ -5,9 +5,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(post_params)
-    post.save
-    redirect_to user_path(current_user)
+    @post = current_user.posts.new(post_params)
+    if @post.save
+      flash[:success] = "投稿が完了しました"
+        redirect_to user_path(@post.user_id)
+    else
+      flash[:alert] = "投稿に失敗失敗しました"
+      #render後にリロードするとエラーになるの修正必要
+      render 'new'
+    end
   end
 
   def show
@@ -21,13 +27,20 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to post_path(@post.id)
+    if @post.update(post_params)
+      flash[:success] = "投稿を更新しました"
+        redirect_to post_path(@post.id)
+    else
+      flash[:alert] = "投稿の更新に失敗しました"
+      #render後にリロードするとエラーになるの修正必要
+      render 'edit'
+    end
   end
 
   def destroy
     post = Post.find(params[:id])
     post.destroy
+    flash[:danger] = "投稿を削除しました"
     redirect_to user_path(current_user)
   end
 
@@ -36,6 +49,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :explanation, :selling_price, :post_image_id, :condition, :is_burden)
+    params.require(:post).permit(:title, :explanation, :selling_price, :post_image, :condition, :is_burden)
   end
 end

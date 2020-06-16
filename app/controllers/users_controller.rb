@@ -9,8 +9,14 @@ class UsersController < ApplicationController
 
   def update
   	@user = User.find(params[:id])
-  	@user.update(user_params)
-  	#redirect先を決める
+  	if @user.update(user_params)
+        flash[:success] = "ユーザー情報を更新しました"
+        redirect_to user_path(@user.id)
+    else
+      flash[:alert] = "ユーザー情報の更新に失敗しました"
+      #render後にリロードするとエラーになるの修正必要
+      render 'edit'
+    end
   end
 
   def hide
@@ -21,6 +27,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-  	params.require(:user).permit(:name)
+  	params.require(:user).permit(:name, :user_image)
   end
 end

@@ -9,4 +9,7 @@ class User < ApplicationRecord
 	has_many :likes, dependent: :destroy
 
 	attachment :user_image
+
+	validates :name, presence: true
+	validates :email, presence: true
 end
