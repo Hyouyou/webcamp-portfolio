@@ -10,6 +10,7 @@
 		</div>
 
 		<div class = "col-xs-5">
+			<%= render "layouts/error_message", model:@post %>
 			<div class = "edit-form text-center">
 				<div class = "form">
 					<span class = "title-info">タイトル</span>
@@ -35,7 +36,7 @@
 					<%= f.text_area :explanation, size: "50x5" %>
 				</div>
 				<div class = "action">
-					<%= f.submit "投稿" %>
+					<%= f.submit "更新" %>
 				</div>
 			</div>
 		</div>

@@ -67,6 +67,7 @@
 			</table>
 		</div>
 
+		<%= render "layouts/error_message", model:@comment %>
 		<%= form_for [@post, @comment] do |f| %>
 			<div class = "new-comment-form">
 				<%= f.text_area :comment, size: "50x5", placeholder: "質問してみる" %>
