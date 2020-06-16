@@ -4,8 +4,11 @@
 	<div class= "col-xs-6">
 		<div class="user-info text-center">
 			<%= attachment_image_tag @user, :user_image, :fill, 40, 40, fallback: "no_image.jpg" %>
-			<h3>ニックネーム</h3>
-			<p><%= @user.name %></p>
+			<h4>ニックネーム</h4>
+			<strong><%= @user.name %></strong>
+		</div>
+		<div class = "user-edit-btn pull-right">
+			<%= link_to "マイページ編集", edit_user_path, class:"btn btn-primary" %>
 		</div>
 	</div>
 
