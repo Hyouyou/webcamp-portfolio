@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
 gem 'font-awesome-sass', '~> 5.4.1'
+gem 'ransack'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
