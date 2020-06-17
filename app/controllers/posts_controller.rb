@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      flash[:success] = "投稿が完了しました"
+      flash[:notice] = "投稿が完了しました"
         redirect_to user_path(@post.user_id)
     else
       flash[:alert] = "投稿に失敗失敗しました"
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      flash[:success] = "投稿を更新しました"
+      flash[:notice] = "投稿を更新しました"
         redirect_to post_path(@post.id)
     else
       flash[:alert] = "投稿の更新に失敗しました"

@@ -1,5 +1,6 @@
 <div class = "row">
 	<div class = "search-box">
+		<%= render 'layouts/notifications' %>
 		<h1 style = "text-align:center;">Let's search for what you want to sell !!</h1>
 
 		<%= search_form_for @search, url:search_posts_path do |f| %>
