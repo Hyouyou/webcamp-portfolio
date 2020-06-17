@@ -18,6 +18,9 @@
 				<div class = "action">
 					<%= f.submit "変更", class:"btn btn-default" %>
 				</div>
+				<div class = "action">
+					<%= link_to "退会", user_registration_path, method: :delete, class:"btn btn-danger", data:{confirm:"退会処理を行います。よろしいですか？"} %>
+				</div>
 			<% end %>
 		</div>
 	</div>

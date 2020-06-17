@@ -1,10 +1,11 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   def create
   	post = Post.find(params[:post_id])
   	@comment = current_user.comments.new(comment_params)
   	@comment.post_id = post.id
   	if @comment.save
-      flash[:success]= "質問を受け付けました！"
+      flash[:notice]= "質問を受け付けました！"
   	   redirect_to post_path(post.id)
     else
       @post = Post.find(params[:post_id])
