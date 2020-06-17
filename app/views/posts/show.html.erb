@@ -6,26 +6,27 @@
 		</div>
 		<section class = "single-post">
 			<div class = "post-show">
-					<span class = "title-show">タイトル：</span>
-					<%= @post.title %>
-				</div>
-				<div class = "form">
-					<span class = "item-show">商品状態：</span>
-					<%= @post.condition %>
-				</div>
-				<div class = "form">
-					<span class = "sales-show">売上高：</span>
-					<%= @post.selling_price %>円
-				</div>
-				<div class = "form">
-					<span class = "burden-show">送料負担：</span>
-					<% if @post.is_burden == true %>
-						<span>出品者負担</span>
-					<% else %>
-						<span>購入者負担</span>
-					<% end %>
-				</div>
-				<div class = "form">
+				<span class = "title-show">タイトル：</span>
+				<%= @post.title %>
+			</div>
+			<div class = "form">
+				<span class = "item-show">商品状態：</span>
+				<%= @post.condition %>
+			</div>
+			<div class = "form">
+				<span class = "sales-show">売上高：</span>
+				<%= @post.selling_price %>円
+			</div>
+			<div class = "form">
+				<span class = "burden-show">送料負担：</span>
+				<% if @post.is_burden == true %>
+					<span>出品者負担</span>
+				<% else %>
+					<span>購入者負担</span>
+				<% end %>
+			</div>
+			<div class = "form">
+				<% if user_signed_in? %>
 					<% if @post.liked_by?(current_user) %>
 						<%= link_to post_likes_path(@post), method: :delete do %>
 							<i class = "fa fa-heart" aria-hidden = "true" style = "color:red;"></i>
@@ -37,12 +38,18 @@
 							<%= @post.likes.count %>いいね
 						<% end%>
 					<% end %>
-				</div>
-				<div class = "form">
-					<span class = "body-show">説明：</span>
-					<%= @post.explanation %>
-				</div>
+				<% else %>
+					<i class = "fa fa-heart" aria-hidden = "true" style = "color:red;"></i>
+					<%= @post.likes.count %>いいねされています
+				<% end %>
+			</div>
+			<div class = "form">
+				<span class = "body-show">説明：</span>
+				<%= @post.explanation %>
+			</div>
+			
 		</section>
+		<% if @post.user == current_user %>
 		<div class = "edit-user-btn">
 			<%= button_to "編集", edit_post_path(@post.id), class:"btn btn-success", method: :get %>
 		</div>
@@ -73,12 +80,20 @@
 			</table>
 		</div>
 
-		<%= render "layouts/error_message", model:@comment %>
-		<%= form_for [@post, @comment] do |f| %>
-			<div class = "new-comment-form">
-				<%= f.text_area :comment, size: "50x5", placeholder: "質問してみる" %>
+		<% if user_signed_in? %>
+			<%= render "layouts/error_message", model:@comment %>
+			<%= form_for [@post, @comment] do |f| %>
+				<div class = "new-comment-form">
+					<%= f.text_area :comment, size: "50x5", placeholder: "質問してみる" %>
+				</div>
+				<%= f.submit "質問する", class: "btn btn-primary" %>
+			<% end %>
+		<% else %>
+			<div class = "invite-new-user text-center">
+				<h3>あなたも質問してみませんか？</h3>
+				<%= link_to "新規登録", new_user_registration_path, class:"btn btn-primary" %>
+				<p>既にアカウントを持っている方は<%= link_to "ログイン", new_user_session_path %></p>
 			</div>
-			<%= f.submit "質問する", class: "btn btn-primary" %>
 		<% end %>
 	</div>
 </div>
