@@ -15,12 +15,14 @@
 
 	<div class= "row">
 		<% @posts.each do |post| %>
-			<div class = "randam-contents col-xs-6 col-md-3">
+			<div class = "randam-contents col-xs-6 col-md-3" style = "padding-left:30px;">
 				<div class = "thumbnail">
 					<%= attachment_image_tag post, :post_image, :fill, 200, 200, fallback:"no_image.jpg" %>
 					<div class = "caption">
 						<h3><%= post.title %></h3>
-						<p><%= post.created_at.strftime('%Y/%m/%d') %></p>
+						<p><%= post.created_at.strftime('%Y/%m/%d') %>に投稿されました。</p>
+
+						<%= render 'posts/like', post: post %>
 						<%= link_to post_path(post.id), class:"btn btn-default" do %>
 							<p>詳細を見る<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></p>
 						<% end %>
