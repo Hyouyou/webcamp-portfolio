@@ -1,6 +1,6 @@
 <div class = "row">
-	<h1>投稿詳細</h1>
 	<div class = "col-xs-6 text-center">
+	<h1>投稿詳細</h1>
 		<div class = "post-show-img">
 			<%= attachment_image_tag @post, :post_image, :fill, 200, 200, fallback: "no_image.jpg" %>
 		</div>
@@ -49,7 +49,11 @@
 				<% if @post.comments.present? %>
 					<% @post.comments.each do |comment| %>
 						<tr>
-							<td><%= comment.user.name %>さん</td>
+							<th>質問者</th>
+							<th>質問内容</th>
+						</tr>
+						<tr>
+							<td width = "120"><%= comment.user.name %>さん</td>
 							<td><%= comment.comment %></td>
 							<td>
 								<% if comment.user == current_user %>
@@ -66,20 +70,22 @@
 			</table>
 		</div>
 
-		<% if user_signed_in? %>
-			<%= render "layouts/error_message", model:@comment %>
-			<%= form_for [@post, @comment] do |f| %>
-				<div class = "new-comment-form">
-					<%= f.text_area :comment, size: "50x5", placeholder: "質問してみる" %>
+		<div class = "invite-box">
+			<% if user_signed_in? %>
+				<%= render "layouts/error_message", model:@comment %>
+				<%= form_for [@post, @comment] do |f| %>
+					<div class = "new-comment-form">
+						<%= f.text_area :comment, size: "50x5", placeholder: "質問してみる" %>
+					</div>
+					<%= f.submit "質問する", class: "btn btn-primary" %>
+				<% end %>
+			<% else %>
+				<div class = "invite-new-user text-center">
+					<h3>あなたも質問してみませんか？</h3>
+					<%= link_to "新規登録", new_user_registration_path, class:"btn btn-primary" %>
+					<p>既にアカウントを持っている方は<%= link_to "ログイン", new_user_session_path %></p>
 				</div>
-				<%= f.submit "質問する", class: "btn btn-primary" %>
 			<% end %>
-		<% else %>
-			<div class = "invite-new-user text-center">
-				<h3>あなたも質問してみませんか？</h3>
-				<%= link_to "新規登録", new_user_registration_path, class:"btn btn-primary" %>
-				<p>既にアカウントを持っている方は<%= link_to "ログイン", new_user_session_path %></p>
-			</div>
-		<% end %>
+		</div>
 	</div>
 </div>

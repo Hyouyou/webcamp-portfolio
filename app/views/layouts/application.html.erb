@@ -7,19 +7,19 @@
     <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'  %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="./footerFixed.js"></script>
   </head>
 
   <body>
     <div id = "body">
-      <div id = "wrapper">
-        <%= render 'layouts/header' %>
-        <div class = "container-fluid">
-          <%= yield %>
-        </div>
-        <footer>
-          <p class = "footer-text">© All rights reserved by Hyouyou. </p>
-        </footer>
+      <%= render 'layouts/header' %>
+      <div class = "container-fluid">
+        <%= yield %>
       </div>
+      <div id = "footer">
+        <p class = "footer-text">© All rights reserved by Hyouyou. </p>
+      </footer>
     </div>
   </body>
 </html>

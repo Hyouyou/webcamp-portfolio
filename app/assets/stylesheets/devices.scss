@@ -1,0 +1,58 @@
+//sign_upとsign_inのcss記述
+
+.log-form{
+	position:relative;
+	width:60%;
+	background:#fff;
+	box-shadow:0px 2px 5px rgba(0,0,0,.25);
+	margin:0 auto;
+	form{
+		display:block;
+		width:100%;
+		padding:2em;
+	}
+	h2{
+		width:100%;
+		color:lighten(#2a2a2a, 20%);
+		font-family:opem, sans, condensed, sans-serif;
+		font-size:1.35em;
+		display:block;
+		background:#2a2a2a;
+		text-transform:uppercase;
+		padding:.75em 1em .75em 1.5em;
+		box-shadow:inset 0px 1px 1px;
+		border:1px solid darken(#2a2a2a, 5%);
+		font-weight:200;
+	}
+	.field{
+		display:block;
+		margin:auto auto;
+		width:100%;
+		margin-bottom:1em;
+		border-bottom:1px solid #eaeaea;
+		padding-bottom:1em;
+		color:#757575;
+		input[type="email"]{
+			border:none;
+			outline:none;
+		}
+		input[type="password"]{
+			border:none;
+			outline:none;
+		}
+	}
+
+	.actions{
+		display:inline-block;
+		padding:.5em 2em;
+		margin-right:.5em;
+		.btn{
+			color:#2fb5bf;
+		}
+	}
+	.links{
+		position:absolute;
+		bottom:30px;
+		right:20px;
+	}
+}
