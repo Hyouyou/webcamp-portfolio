@@ -1,23 +1,26 @@
 <div class = "row">
-	<div class = "col-xs-6 text-center">
 	<h1>投稿詳細</h1>
+	<div class = "col-xs-6 text-center">
 		<div class = "post-show-img">
-			<%= attachment_image_tag @post, :post_image, :fill, 200, 200, fallback: "no_image.jpg" %>
+			<%= attachment_image_tag @post, :post_image, :fill, 300, 300, fallback: "no_image.jpg" %>
 		</div>
+	</div>
+
+	<div class = "col-xs-6">
 		<section class = "single-post">
 			<div class = "post-show">
 				<span class = "title-show">タイトル：</span>
 				<%= @post.title %>
 			</div>
-			<div class = "form">
+			<div class = "post-show">
 				<span class = "item-show">商品状態：</span>
 				<%= @post.condition %>
 			</div>
-			<div class = "form">
+			<div class = "post-show">
 				<span class = "sales-show">売上高：</span>
 				<%= @post.selling_price %>円
 			</div>
-			<div class = "form">
+			<div class = "post-show">
 				<span class = "burden-show">送料負担：</span>
 				<% if @post.is_burden == true %>
 					<span>出品者負担</span>
@@ -25,22 +28,23 @@
 					<span>購入者負担</span>
 				<% end %>
 			</div>
-			<div class = "form">
+			<div class = "post-show">
 				<%= render 'posts/like', post: @post %>
 			</div>
-			<div class = "form">
+			<div class = "post-show">
 				<span class = "body-show">説明：</span>
 				<%= @post.explanation %>
 			</div>
 		</section>
 		<% if @post.user == current_user %>
-			<div class = "edit-user-btn">
-				<%= button_to "編集", edit_post_path(@post.id), class:"btn btn-success", method: :get %>
+			<div class = "edit-user-btn text-center">
+				<%= link_to "編集する", edit_post_path(@post.id), class:"btn", method: :get %>
 			</div>
 		<% end %>
 	</div>
-
-	<div class = "col-xs-6 center-block">
+</div>
+<div calss = "row">
+	<div class = "col-xs-6 col-xs-offset-3">
 		<%= render 'layouts/flash' %>
 
 		<div class = "comment-table">
@@ -88,4 +92,5 @@
 			<% end %>
 		</div>
 	</div>
+	<div class = "col-xs-3"></div>
 </div>

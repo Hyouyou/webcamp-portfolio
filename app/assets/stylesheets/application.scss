@@ -18,10 +18,18 @@
  @import "bootstrap";
 
 
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+
 body{
 	width:100%;
 	min-height:100vh;
 }
+
 
 .navbar-brand{
 	font-family: 'American Typewriter','Arial','Courier','Georgia',sans-serif;
