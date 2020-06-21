@@ -24,8 +24,14 @@
 	box-sizing:border-box;
 }
 
-#notification{
-	padding-top:50px;
+#flash{
+	text-align:center;
+	.notice{
+		background-color:#00ccff;
+	}
+	.alert{
+		background-color:orange;
+	}
 }
 
 
@@ -33,13 +39,19 @@
 	text-align:center;
 	h1{
 		background-color:#2fb5bf;
-		margin-top:20px;
+		margin:0 auto;
+		margin-bottom:10px;
 	}
+}
+
+#row{
+	min-height:80vh;
 }
 
 body{
 	width:100%;
 }
+
 
 
 .navbar-brand{

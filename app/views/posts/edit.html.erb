@@ -1,4 +1,5 @@
-<div class = "row">
+<div id = "row">
+<%= render 'layouts/notifications' %>
 	<div id = "head">
 		<h1>投稿編集</h1>
 	</div>
@@ -12,7 +13,6 @@
 		</div>
 
 		<div class = "col-xs-5">
-			<%= render 'layouts/flash' %>
 			<%= render "layouts/error_message", model:@post %>
 			<div class = "update-post-form text-center">
 				<div class = "update-post">

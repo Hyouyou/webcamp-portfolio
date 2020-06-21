@@ -2,16 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.head-box{
+	border:2px solid #f7f7f7;
+	padding-bottom:30px;
+}
 .post-show, .post-new, .user-edit, .update-post{
 	padding:5px 0;
 	text-align:center;
+}
+
+.single-post{
+	padding-left:50px;
+}
+dd{
 	font-size:18px;
 }
 
 .edit-post-btn, .edit-user-btn, .new-post-btn, .update-post-btn{
 	margin:0 auto;
 	width:20%;
+	height:50px;
+	line-height:50px;
 	background: #f7f7f7;
 	border-left: solid 6px #2fb5bf;
 	color: #ff7c5c;
@@ -24,8 +35,22 @@
 	}
 }
 
+.profile-area{
+	padding-left:60px;
+	h3{
+		background-color:#ff7c5c;
+	}
+	p{
+		text-align:center;
+		font-size:15px
+	}
+}
+
 .comment-table{
 	padding-left:60px;
+	h3{
+	background-color:#ff7c5c;
+	}
 }
 
 .invite-box{
