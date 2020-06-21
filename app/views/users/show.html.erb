@@ -1,16 +1,18 @@
 <div class = "row">
-	<h1><%= @user.name %>のマイページ</h1>
+	<div class = "show-user-head">
+		<h1><%= @user.name %>のマイページ</h1>
+	</div>
 
-	<div class= "col-xs-6">
-		<div class="user-info text-center">
+	<div class= "col-xs-6 text-center">
+		<div class="user-info">
 			<%= render 'layouts/flash' %>
 			
 			<%= attachment_image_tag @user, :user_image, :fill, 200, 200, fallback: "no_image.jpg" %>
-			<h4>ニックネーム</h4>
-			<strong><%= @user.name %></strong>
+			<h4>(ニックネーム)</h4>
+			<strong class = "strong"><%= @user.name %></strong>
 		</div>
-		<div class = "user-edit-btn pull-right">
-			<%= link_to "マイページ編集", edit_user_path, class:"btn btn-primary" %>
+		<div class = "edit-user-btn">
+			<%= link_to "変更する", edit_user_path, class:"btn" %>
 		</div>
 	</div>
 

@@ -1,7 +1,9 @@
 <div class = "row">
-	<h1>投稿詳細</h1>
-	<div class = "col-xs-6 text-center">
-		<div class = "post-show-img">
+	<div id = "head">
+		<h1>投稿詳細</h1>
+	</div>
+	<div class = "col-xs-6">
+		<div class = "post-show-img text-center">
 			<%= attachment_image_tag @post, :post_image, :fill, 300, 300, fallback: "no_image.jpg" %>
 		</div>
 	</div>
@@ -18,7 +20,7 @@
 			</div>
 			<div class = "post-show">
 				<span class = "sales-show">売上高：</span>
-				<%= @post.selling_price %>円
+				<%= @post.selling_price.to_s(:delimited) %>円
 			</div>
 			<div class = "post-show">
 				<span class = "burden-show">送料負担：</span>
@@ -37,14 +39,14 @@
 			</div>
 		</section>
 		<% if @post.user == current_user %>
-			<div class = "edit-user-btn text-center">
+			<div class = "edit-post-btn text-center">
 				<%= link_to "編集する", edit_post_path(@post.id), class:"btn", method: :get %>
 			</div>
 		<% end %>
 	</div>
 </div>
-<div calss = "row">
-	<div class = "col-xs-6 col-xs-offset-3">
+<div calss = "row ">
+	<div class = "comment-area col-xs-6 col-xs-offset-3">
 		<%= render 'layouts/flash' %>
 
 		<div class = "comment-table">
@@ -92,5 +94,4 @@
 			<% end %>
 		</div>
 	</div>
-	<div class = "col-xs-3"></div>
 </div>

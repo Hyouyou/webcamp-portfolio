@@ -3,21 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
-.invite-new-user{
-	border:2px solid #C0C0C0;
-	width:400px;
-	line-height:center;
-	margin:0 auto;
-}
-
-.post-show{
-	padding:10px 0;
+.post-show, .post-new, .user-edit, .update-post{
+	padding:5px 0;
 	text-align:center;
 	font-size:18px;
 }
 
-.edit-user-btn{
+.edit-post-btn, .edit-user-btn, .new-post-btn, .update-post-btn{
 	margin:0 auto;
 	width:20%;
 	background: #f7f7f7;
@@ -29,5 +21,19 @@
 	}
 	.btn{
 		font-weight: bold;
+	}
+}
+
+.comment-table{
+	padding-left:60px;
+}
+
+.invite-box{
+	padding-left:60px;
+	.invite-new-user{
+		border:2px solid #C0C0C0;
+		width:400px;
+		line-height:center;
+		margin:0 auto;
 	}
 }
