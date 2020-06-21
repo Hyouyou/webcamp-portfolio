@@ -1,17 +1,20 @@
-<div class = "row">
-	<h1><%= @user.name %>のマイページ</h1>
+<div id = "row">
+<%= render 'layouts/notifications' %>
+	<div id = "head">
+		<h1><%= @user.name %>さんのマイページ</h1>
+	</div>
 
-	<div class= "col-xs-6">
-		<div class="user-info text-center">
-			<%= render 'layouts/flash' %>
-			
+	<div class= "col-xs-6 text-center">
+		<div class="user-info">
 			<%= attachment_image_tag @user, :user_image, :fill, 200, 200, fallback: "no_image.jpg" %>
-			<h4>ニックネーム</h4>
-			<strong><%= @user.name %></strong>
+			<h4 class = "strong"><%= @user.name %></h4>
+			<div class = "user-profile"><%= @user.profile %></div>
 		</div>
-		<div class = "user-edit-btn pull-right">
-			<%= link_to "マイページ編集", edit_user_path, class:"btn btn-primary" %>
-		</div>
+		<% if @user == current_user %>
+			<div class = "edit-user-btn">
+				<%= link_to "変更する", edit_user_path, class:"btn" %>
+			</div>
+		<% end %>
 	</div>
 
 	<div class = "col-xs-6">

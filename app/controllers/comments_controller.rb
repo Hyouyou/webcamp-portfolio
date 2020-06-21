@@ -9,10 +9,9 @@ class CommentsController < ApplicationController
   	   redirect_to post_path(post.id)
     else
       @post = Post.find(params[:post_id])
-      flash[:danger] = "質問を削除しました"
+      flash[:alert] = "質問を削除しました"
       render template: 'posts/show'
     end
-
   end
 
   def destroy

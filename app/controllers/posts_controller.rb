@@ -11,7 +11,7 @@ class PostsController < ApplicationController
       flash[:notice] = "投稿が完了しました"
         redirect_to user_path(@post.user_id)
     else
-      flash[:alert] = "投稿に失敗失敗しました"
+      flash[:alert] = "投稿に失敗しました"
       #render後にリロードするとエラーになるの修正必要
       render 'new'
     end
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    flash[:danger] = "投稿を削除しました"
+    flash[:alert] = "投稿を削除しました"
     redirect_to user_path(current_user)
   end
 

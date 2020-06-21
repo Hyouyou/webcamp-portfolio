@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except:[:show]
   
   def show
   	@user = User.find(params[:id])
@@ -21,14 +21,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def hide
-  end
-
-  def is_deleted
-  end
-
   private
   def user_params
-  	params.require(:user).permit(:name, :user_image)
+  	params.require(:user).permit(:name, :user_image, :profile)
   end
 end

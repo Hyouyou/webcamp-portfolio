@@ -1,43 +1,45 @@
-<div class = "row">
-	<h1>投稿編集</h1>
+<div id = "row">
+<%= render 'layouts/notifications' %>
+	<div id = "head">
+		<h1>投稿編集</h1>
+	</div>
 	<%= form_with model:@post, local: true do |f| %>
 		<div class = "col-xs-5 col-xs-offset-1">
 			<div class = "post-edit-form">
 				<!--<span class = "user-image-info"></span>-->
-				<%= attachment_image_tag @post, :post_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+				<%= attachment_image_tag @post, :post_image, :fill, 300, 300, fallback: "no_image.jpg" %>
 				<%= f.attachment_field :post_image, placeholder:"参考画像" %>
 			</div>
 		</div>
 
 		<div class = "col-xs-5">
-			<%= render 'layouts/flash' %>
 			<%= render "layouts/error_message", model:@post %>
-			<div class = "edit-form text-center">
-				<div class = "form">
+			<div class = "update-post-form text-center">
+				<div class = "update-post">
 					<span class = "title-info">タイトル</span>
 					<%= f.text_field :title %>
 				</div>
-				<div class = "form">
+				<div class = "update-post">
 					<span class = "condition-info">商品状態</span>
 					<%= f.select :condition, Post.conditions.keys %>
 				</div>
-				<div class = "form">
+				<div class = "update-post">
 					<span class = "sales-info">売上高</span>
 					<%= f.text_field :selling_price %>円
 				</div>
-				<div class = "form">
+				<div class = "update-post">
 					<span class = "burden-info">送料負担</span>
 					<% label :is_burden, "", value: true %>
 					<%= f.radio_button :is_burden, true %>出品者負担
 					<% label :is_burden, "", value: false %>
 					<%= f.radio_button :is_burden, false %>購入者負担
 				</div>
-				<div class = "form">
-					<span class = "body-info">説明</span>
+				<div class = "update-post">
+					<span class = "body-info">詳細説明</span>
 					<%= f.text_area :explanation, size: "50x5" %>
 				</div>
-				<div class = "action">
-					<%= f.submit "更新" %>
+				<div class = "update-post-btn">
+					<%= f.submit "更新", class:"btn" %>
 				</div>
 			</div>
 		</div>

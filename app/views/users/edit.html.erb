@@ -1,24 +1,30 @@
-<div class = "row">
+<div id = "row">
+<%= render 'layouts/notifications' %>
 	<div class = "col-xs-offset-4 col-xs-4">
-		<h1>会員情報編集ページ</h1>
-		<%= render 'layouts/flash' %>
+		<div id = "head">
+			<h1>プロフィール設定</h1>
+		</div>
 		<%= render "layouts/error_message", model:@user %>
 		
-		<div class = "edit-user-form text-center">
+		<div class = "edit-user-form">
 			<%= form_with model:@user, local: true do |f| %>
-				<div class = "form">
+				<div class = "user-edit">
+					<!--<span class = "user-image-info"></span>-->
+					<%= attachment_image_tag @user, :user_image, :fill, 200, 200, fallback: "no_image.jpg" %>
+					<%= f.attachment_field :user_image, class:"user-image" %>
+				</div>
+				<div class = "user-edit">
 					<span class = "name-info">ニックネーム</span>
 					<%= f.text_field :name, autofocus: true, placeholder:"ニックネーム" %>
 				</div>
-				<div class = "form">
-					<!--<span class = "user-image-info"></span>-->
-					<%= attachment_image_tag @user, :user_image, :fill, 200, 200, fallback: "no_image.jpg" %>
-					<%= f.attachment_field :user_image, placeholder:"プロフィール画像" %>
+				<div class = "user-edit">
+					<%= f.text_area :profile, size:"40x5", autofocus: true, placeholder:"自己紹介" %>
 				</div>
-				<div class = "action">
-					<%= f.submit "変更", class:"btn btn-default" %>
+				<div class = "update-user-btn">
+					<%= f.submit "保存", class:"btn btn-primary" %>
 				</div>
-				<div class = "action">
+				|
+				<div class = "hide-user-btn">
 					<%= link_to "退会", user_registration_path, method: :delete, class:"btn btn-danger", data:{confirm:"退会処理を行います。よろしいですか？"} %>
 				</div>
 			<% end %>
