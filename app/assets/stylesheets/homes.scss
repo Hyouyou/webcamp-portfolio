@@ -24,8 +24,11 @@
 	background-color:#eeeeee;
 	padding-left:50px;
 	.thumbnail{
-	width:250px;
-	height:450px;
+		width:250px;
+		height:450px;
+		.caption{
+			padding:30px 9px 9px 9px;
+		}
 	}
 }
 
