@@ -20,12 +20,14 @@
 						<li><%= link_to 'マイページ', user_path(current_user) %></li>
 						<li><%= link_to '新規投稿作成', new_post_path %></li>
 						<li><%= link_to 'ログアウト', sign_out_path %></li>
+						<li><%= link_to 'サイトについて', about_path %></li>
 					</ul>
 					<p class = "navbar-text navbar-right">ようこそ<%= link_to current_user.name, user_path(current_user) %>さん</p>
 				<% else %>
 					<ul class = "nav navbar-nav">
 						<li><%= link_to '新規登録', new_user_registration_path %></li>
 						<li><%= link_to 'ログイン', sign_in_path %></li>
+						<li><%= link_to 'サイトについて', about_path %></li>
 					</ul>
 					<p class = "navbar-text navbar-right">ようこそゲストさん</p>
 				<% end %>

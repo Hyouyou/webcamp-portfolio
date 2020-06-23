@@ -24,6 +24,7 @@
 	box-sizing:border-box;
 }
 
+/*フラッシュ*/
 #flash{
 	text-align:center;
 	.notice{
@@ -33,8 +34,9 @@
 		background-color:orange;
 	}
 }
+/*ここまで*/
 
-
+/*見出し*/
 #head{
 	text-align:center;
 	h1{
@@ -43,7 +45,9 @@
 		margin-bottom:10px;
 	}
 }
+/*ここまで*/
 
+/*レイアウト調整*/
 #row{
 	min-height:80vh;
 }
@@ -51,9 +55,9 @@
 body{
 	width:100%;
 }
+/*ここまで*/
 
-
-
+/*ヘッダー・フッター*/
 .navbar-brand{
 	font-family: 'American Typewriter','Arial','Courier','Georgia',sans-serif;
 }
@@ -68,13 +72,4 @@ footer{
 		color:#fff;
 	}
 }
-
-.show-user-head, .edit-user-head, .show-post-head, .edit-post-head, .new-post-head{
-	background-color:#2fb5bf;
-	text-align:center;
-}
-
-.comment-area{
-	margin-top:50px;
-	margin-bottom:50px;
-}
+/*ここまで*/

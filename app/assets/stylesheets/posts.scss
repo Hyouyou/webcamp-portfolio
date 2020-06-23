@@ -2,10 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+ /*投稿詳細ページの上半分*/
 .head-box{
 	border:2px solid #f7f7f7;
 	padding-bottom:30px;
 }
+
+/*各ページのデータ表示*/
 .post-show, .post-new, .user-edit, .update-post{
 	padding:5px 0;
 	text-align:center;
@@ -34,7 +37,10 @@ dd{
 		font-weight: bold;
 	}
 }
+/*ここまで*/
 
+
+/*投稿詳細ページの下半分*/
 .profile-area{
 	padding-left:60px;
 	h3{
@@ -45,11 +51,14 @@ dd{
 		font-size:15px
 	}
 }
-
-.comment-table{
-	padding-left:60px;
-	h3{
-	background-color:#ff7c5c;
+.comment-area{
+	margin-top:50px;
+	margin-bottom:50px;
+	.comment-table{
+		padding-left:60px;
+		h3{
+			background-color:#ff7c5c;
+		}
 	}
 }
 
@@ -62,3 +71,4 @@ dd{
 		margin:0 auto;
 	}
 }
+/*ここまで*/

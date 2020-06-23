@@ -14,14 +14,7 @@ Rails.application.routes.draw do
 	root 'homes#top'
 	get '/about' => 'homes#about'
 
-	resources :users, only:[:show, :edit, :update] do
-	  collection do
-	  	get :hide
-	  	patch :is_deleted
-	  end
-	end
-
-
+	resources :users, only:[:show, :edit, :update]
 	resources :posts, only:[:new, :show, :create, :edit, :update, :destroy] do
 		resource :likes, only:[:create, :destroy]
 		resources :comments, only:[:create, :destroy]

@@ -9,9 +9,8 @@
 		<div class = "edit-user-form">
 			<%= form_with model:@user, local: true do |f| %>
 				<div class = "user-edit">
-					<!--<span class = "user-image-info"></span>-->
-					<%= attachment_image_tag @user, :user_image, :fill, 200, 200, fallback: "no_image.jpg" %>
-					<%= f.attachment_field :user_image, class:"user-image" %>
+					<%= attachment_image_tag @user, :user_image, :fill, 200, 200, fallback: "no_image.jpg", id:"img-prev" %>
+					<%= f.attachment_field :user_image, id:"user-image" %>
 				</div>
 				<div class = "user-edit">
 					<span class = "name-info">ニックネーム</span>

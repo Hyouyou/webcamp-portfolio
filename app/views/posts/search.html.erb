@@ -4,13 +4,12 @@
 
 		<table class = "table table-border">
 			<div class = "no-border">
-				<tr>
-					<th>投稿日</th>
-					<th>ニックネーム</th>
-					<th>タイトル</th>
-				</tr>
-
 				<% if @results.present? %>
+					<tr>
+						<th>投稿日</th>
+						<th>ニックネーム</th>
+						<th>タイトル</th>
+					</tr>
 					<% @results.each do |result| %>
 						<tr>
 							<td><%= result.created_at.strftime('%Y/%m/%d') %></td>

@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
+/*検索と背景*/
 .search-box{
 	width:100%;
 	height:300px;
@@ -18,6 +18,12 @@
 		border-radius:50%;
 	}
 }
+/*ここまで*/
+
+/*サムネイル*/
+h2{
+	padding-left:60px
+}
 
 .randam-contents{
 	padding-top:50px;
@@ -31,8 +37,9 @@
 		}
 	}
 }
+/*ここまで*/
 
-
+/*アイコン*/
 .point{
 	text-align:center;
 	.glyphicon{
@@ -42,11 +49,63 @@
 		font-size:20px;
 	}
 }
+/*ここまで*/
 
-h2{
-	padding-left:60px
+/* モーダルウィンドウ */
+#modal-area1, #modal-area2, #modal-area3 {
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:10;
 }
 
+.modal-bg {
+  width:100%;
+  height:100%;
+  background-color:rgba(30,30,30,0.9);
+}
+
+.modal-wrapper {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:70%;
+  max-width:500px;
+  padding:10px 30px;
+  background-color:#fff;
+}
+
+#close-modal1, #close-modal2, #close-modal3{
+  position:absolute;
+  top:0.5rem;
+  right:1rem;
+  cursor:pointer;
+}
+
+#open-modal1, #open-modal2, #open-modal3{
+  width:70px;
+  height:30px;
+  font-size:1.3em;
+  color:#144252;
+  background-color:#FFF;
+  border:solid 2px #144252;
+  border-radius:3px;
+  &:hover{
+	  background:#144252;
+	  color:#FFF;
+	}
+}
+
+.service{
+	margin-bottom:20px;
+}
+/*ここまで*/
+
+/*aboutページの画像*/
 .about-image{
 	height:30em;
 	background-image:image-url("mokume.jpg");
@@ -67,3 +126,4 @@ h2{
 		}
 	}
 }
+/*ここまで*/
