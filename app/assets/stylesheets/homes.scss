@@ -46,3 +46,24 @@
 h2{
 	padding-left:60px
 }
+
+.about-image{
+	height:30em;
+	background-image:image-url("mokume.jpg");
+	background-size:cover;
+	.block{
+		height:30em;
+		background-color:rgba(0,0,0,0.5);
+		h1{
+			margin:0;
+			text-align:center;
+			padding-top:50px;
+			color:#fff;
+		}
+		p{
+			text-align:center;
+			font-size:20px;
+			color:#fff;
+		}
+	}
+}
