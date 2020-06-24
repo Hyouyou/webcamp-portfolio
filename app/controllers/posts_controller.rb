@@ -11,14 +11,14 @@ class PostsController < ApplicationController
       flash[:notice] = "投稿が完了しました"
         redirect_to user_path(@post.user_id)
     else
-      flash[:alert] = "投稿に失敗しました"
-      #render後にリロードするとエラーになるの修正必要
+      flash.now[:alert] = "投稿に失敗しました"
       render 'new'
     end
   end
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments.page(params[:page]).reverse_order
     @comment = Comment.new
   end
 
@@ -32,8 +32,7 @@ class PostsController < ApplicationController
       flash[:notice] = "投稿を更新しました"
         redirect_to post_path(@post.id)
     else
-      flash[:alert] = "投稿の更新に失敗しました"
-      #render後にリロードするとエラーになるの修正必要
+      flash.now[:alert] = "投稿の更新に失敗しました"
       render 'edit'
     end
   end
@@ -41,7 +40,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    flash[:alert] = "投稿を削除しました"
+    flash.now[:alert] = "投稿を削除しました"
     redirect_to user_path(current_user)
   end
 

@@ -8,8 +8,10 @@
 		
 		<div class = "edit-user-form">
 			<%= form_with model:@user, local: true do |f| %>
-				<div class = "user-edit">
-					<%= attachment_image_tag @user, :user_image, :fill, 200, 200, fallback: "no_image.jpg", id:"img-prev" %>
+				<div class = "prev-image">
+					<div class = "file-img">
+						<%= attachment_image_tag @user, :user_image, :fill, 200, 200, fallback: "no_image.jpg", id:"img-prev" %>
+					</div>
 					<%= f.attachment_field :user_image, id:"user-image" %>
 				</div>
 				<div class = "user-edit">

@@ -4,12 +4,12 @@
 		<h1>投稿編集</h1>
 	</div>
 	<%= form_with model:@post, local: true do |f| %>
-		<div class = "col-xs-5 col-xs-offset-1">
-			<div class = "post-edit-form">
+		<div class = "col-xs-5 col-xs-offset-1 prev-img">
+			<div class = "file-img">
 				<!--<span class = "user-image-info"></span>-->
 				<%= attachment_image_tag @post, :post_image, :fill, 300, 300, fallback: "no_image.jpg" %>
-				<%= f.attachment_field :post_image, placeholder:"参考画像" %>
 			</div>
+			<%= f.attachment_field :post_image %>
 		</div>
 
 		<div class = "col-xs-5">

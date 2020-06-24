@@ -11,9 +11,27 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require activestorage
-//= require turbolinks
+//= require refile
 //= require jquery
-//= require jquery_ujs
+//= require turbolinks
+//= require activestorage
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(function(){
+	$(document).on('turbolinks:load', () => {
+		    // formのinput
+		    $('form input:file').uploadThumbs();
+		});
+
+	$('#comment-submit').attr('disabled','disabled');
+
+	$('#comment-text').bind('keydown keyup keypress change', function(){
+		if($(this).val().length > 0) {
+			$('#comment-submit').removeAttr('disabled');
+		} else {
+			$('#comment-submit').attr('disabled','disabled');
+		}
+	});
+});
+

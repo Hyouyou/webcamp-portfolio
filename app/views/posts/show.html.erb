@@ -52,12 +52,12 @@
 		<div class = "comment-table">
 			<h3>質問一覧</h3>
 			<table class = "table table-border">
-				<% if @post.comments.present? %>
+				<% if @comments.present? %>
 					<tr>
 						<th>質問者</th>
 						<th>質問内容</th>
 					</tr>
-					<% @post.comments.each do |comment| %>
+					<% @comments.each do |comment| %>
 						<tr>
 							<td width = "120">
 								<%= comment.user.name %>さん
@@ -73,6 +73,7 @@
 				<% else %>
 					<h4>この投稿に対する質問はありません</h4>
 				<% end %>
+				<%= paginate @comments %>
 			</table>
 		</div>
 
@@ -81,9 +82,9 @@
 				<%= render "layouts/error_message", model:@comment %>
 				<%= form_for [@post, @comment] do |f| %>
 					<div class = "new-comment-form">
-						<%= f.text_area :comment, size: "70x5", placeholder: "質問してみる" %>
+						<%= f.text_area :comment, size: "70x5", placeholder: "質問してみる", id:"comment-text" %>
 					</div>
-					<%= f.submit "質問する", class: "btn btn-primary" %>
+					<%= f.submit "質問する", id:"comment-submit", class: "btn btn-primary" %>
 				<% end %>
 			<% else %>
 				<div class = "invite-new-user text-center">

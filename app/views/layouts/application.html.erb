@@ -7,14 +7,16 @@
     <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'  %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="jquery.upload_thumbs.js"></script>
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
   </head>
 
   <body>
       <%= render 'layouts/header' %>
       <div id = "container-fluid">
         <%= yield %>
-      </div>
-      <footer>© All rights reserved by Hyouyou.</footer>
+        <div class = "row">
+          <footer>© All rights reserved by Hyouyou.</footer>
+        </div>
   </body>
 </html>
