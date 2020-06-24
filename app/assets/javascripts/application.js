@@ -20,18 +20,18 @@
 
 $(function(){
 	$(document).on('turbolinks:load', () => {
-		    // formのinput
-		    $('form input:file').uploadThumbs();
+		
+	    $('form input:file').uploadThumbs();
+
+		$('#comment-submit').attr('disabled','disabled');
+
+		$('#comment-text').bind('keydown keyup keypress change', function(){
+			if($(this).val().length > 0) {
+				$('#comment-submit').removeAttr('disabled');
+			} else {
+				$('#comment-submit').attr('disabled','disabled');
+			}
 		});
-
-	$('#comment-submit').attr('disabled','disabled');
-
-	$('#comment-text').bind('keydown keyup keypress change', function(){
-		if($(this).val().length > 0) {
-			$('#comment-submit').removeAttr('disabled');
-		} else {
-			$('#comment-submit').attr('disabled','disabled');
-		}
 	});
 });
 

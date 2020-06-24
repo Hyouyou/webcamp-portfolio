@@ -2,7 +2,7 @@
 	<div class = "search-box">
 		<%= search_form_for @search, url:search_posts_path do |f| %>
 			<div class = "search-form text-center">
-				<%= f.search_field :title_or_explanation_cont, placeholder: "Let's search for what you want to sell !!", size: 40 %>
+				<%= f.search_field :title_or_explanation_cont, placeholder: "検索キーワードを入力" %>
 				<%= f.button class: "search-btn btn btn-default" do %>
 					<i class="glyphicon glyphicon-search"></i>
 				<% end %>
@@ -28,38 +28,4 @@
 			</div>
 		</div>
 	<% end %>
-</div>
-<div class = "row">
-	<h2>At your service</h2>
-	<hr class = "line">
-</div>
-<div class = "row">
-	<div class = "col-xs-3">
-		<div class = "point">
-			<i class="glyphicon glyphicon-share" aria-hidden="true"></i>
-			<h3>Share</h3>
-			<p class = "icon-text text-muted">Easily share your experience</p>
-		</div>
-	</div>
-	<div class = "col-xs-3">
-		<div class = "point">
-			<i class="glyphicon glyphicon-search" aria-hidden="true"></i>
-			<h3>Research</h3>
-			<p class = "icon-text text-muted">You can quickly find what you want to know</p>
-		</div>
-	</div>
-	<div class = "col-xs-3">
-		<div class = "point">
-			<i class="glyphicon glyphicon-question-sign" aria-hidden="true"></i>
-			<h3>Question</h3>
-			<p class = "icon-text text-muted">You can ask any question immediately</p>
-		</div>
-	</div>
-	<div class = "col-xs-3">
-		<div class = "point">
-			<!--ここにかっこいいやついれる-->
-			<h3>見出し</h3>
-			<p class = "icon-text text-muted">テキスト</p>
-		</div>
-	</div>
 </div>
