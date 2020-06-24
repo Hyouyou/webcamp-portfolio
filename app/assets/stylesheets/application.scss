@@ -32,6 +32,9 @@
 	}
 	.alert{
 		background-color:orange;
+		padding:0;
+		margin-bottom:0;
+		border-radius:0;
 	}
 }
 /*ここまで*/
@@ -49,7 +52,7 @@
 
 /*レイアウト調整*/
 #row{
-	min-height:80vh;
+	min-height:85vh;
 }
 
 body{
@@ -68,9 +71,15 @@ footer{
 	text-align:center;
 	line-height:80px;
 	background-color:#848282;
-	.footer-text{
+	p{
 		color:#fff;
+		margin:0;
 	}
 }
 /*ここまで*/
 
+#wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
