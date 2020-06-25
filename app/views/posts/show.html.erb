@@ -1,5 +1,4 @@
 <div class = "head-box row">
-<%= render 'layouts/notifications' %>
 	<div id = "head">
 		<h1><%= @post.title %></h1>
 	</div>
@@ -55,11 +54,12 @@
 				<% if @comments.present? %>
 					<tr>
 						<th>質問者</th>
+						<th>日時</th>
 						<th>質問内容</th>
 					</tr>
 					<% @comments.each do |comment| %>
 						<tr>
-							<td width = "120">
+							<td width = "90">
 								<%= comment.user.name %>さん
 								<% if comment.user == current_user %>
 									<div class = "comment-delete-btn">
@@ -67,6 +67,7 @@
 									</div>
 								<% end %>
 							</td>
+							<td><%= comment.created_at.strftime('%Y/%m/%d') %></td>
 							<td><%= comment.comment %></td>
 						</tr>
 					<% end %>
