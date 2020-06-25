@@ -14,7 +14,15 @@
 		display:inline-block;
 		margin:5px 10px;
 	}
-	.user-image{
-		padding-left:30px;
+}
+
+.prev-image{
+	.thumb{
+		width:200px;
+		height:200px;
+	}
+	#user-image{
+		margin:0 auto;
+		padding-top:5px;
 	}
 }

@@ -1,5 +1,4 @@
 <div class = "head-box row">
-<%= render 'layouts/notifications' %>
 	<div id = "head">
 		<h1><%= @post.title %></h1>
 	</div>
@@ -52,14 +51,15 @@
 		<div class = "comment-table">
 			<h3>質問一覧</h3>
 			<table class = "table table-border">
-				<% if @post.comments.present? %>
+				<% if @comments.present? %>
 					<tr>
 						<th>質問者</th>
+						<th>日時</th>
 						<th>質問内容</th>
 					</tr>
-					<% @post.comments.each do |comment| %>
+					<% @comments.each do |comment| %>
 						<tr>
-							<td width = "120">
+							<td width = "90">
 								<%= comment.user.name %>さん
 								<% if comment.user == current_user %>
 									<div class = "comment-delete-btn">
@@ -67,12 +67,14 @@
 									</div>
 								<% end %>
 							</td>
+							<td><%= comment.created_at.strftime('%Y/%m/%d') %></td>
 							<td><%= comment.comment %></td>
 						</tr>
 					<% end %>
 				<% else %>
 					<h4>この投稿に対する質問はありません</h4>
 				<% end %>
+				<%= paginate @comments %>
 			</table>
 		</div>
 
@@ -81,9 +83,9 @@
 				<%= render "layouts/error_message", model:@comment %>
 				<%= form_for [@post, @comment] do |f| %>
 					<div class = "new-comment-form">
-						<%= f.text_area :comment, size: "70x5", placeholder: "質問してみる" %>
+						<%= f.text_area :comment, size: "70x5", placeholder: "質問してみる", id:"comment-text" %>
 					</div>
-					<%= f.submit "質問する", class: "btn btn-primary" %>
+					<%= f.submit "質問する", id:"comment-submit", class: "btn btn-primary" %>
 				<% end %>
 			<% else %>
 				<div class = "invite-new-user text-center">

@@ -15,8 +15,7 @@ class UsersController < ApplicationController
         flash[:notice] = "ユーザー情報を更新しました"
         redirect_to user_path(@user.id)
     else
-      flash[:alert] = "ユーザー情報の更新に失敗しました"
-      #render後にリロードするとエラーになるの修正必要
+      flash.now[:alert] = "ユーザー情報の更新に失敗しました"
       render 'edit'
     end
   end

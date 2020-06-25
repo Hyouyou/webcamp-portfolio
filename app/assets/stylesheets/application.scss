@@ -24,6 +24,7 @@
 	box-sizing:border-box;
 }
 
+/*フラッシュ*/
 #flash{
 	text-align:center;
 	.notice{
@@ -31,29 +32,36 @@
 	}
 	.alert{
 		background-color:orange;
+		padding:0;
+		margin-bottom:0;
+		border-radius:0;
 	}
 }
+/*ここまで*/
 
-
+/*見出し*/
 #head{
 	text-align:center;
 	h1{
-		background-color:#2fb5bf;
+		background-color:#00c7ce;
 		margin:0 auto;
 		margin-bottom:10px;
+		font-family:'YuGothic','HiraKakuProN-W6','Meiryo','sans-serif';
 	}
 }
+/*ここまで*/
 
+/*レイアウト調整*/
 #row{
-	min-height:80vh;
+	min-height:85vh;
 }
 
 body{
 	width:100%;
 }
+/*ここまで*/
 
-
-
+/*ヘッダー・フッター*/
 .navbar-brand{
 	font-family: 'American Typewriter','Arial','Courier','Georgia',sans-serif;
 }
@@ -64,17 +72,20 @@ footer{
 	text-align:center;
 	line-height:80px;
 	background-color:#848282;
-	.footer-text{
+	p{
 		color:#fff;
+		margin:0;
 	}
 }
+/*ここまで*/
 
-.show-user-head, .edit-user-head, .show-post-head, .edit-post-head, .new-post-head{
-	background-color:#2fb5bf;
-	text-align:center;
+#wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.comment-area{
-	margin-top:50px;
-	margin-bottom:50px;
+#error-explanation{
+	font-size:20px;
+	color:red;
 }

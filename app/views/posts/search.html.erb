@@ -4,21 +4,23 @@
 
 		<table class = "table table-border">
 			<div class = "no-border">
-				<tr>
-					<th>投稿日</th>
-					<th>ニックネーム</th>
-					<th>タイトル</th>
-				</tr>
-
 				<% if @results.present? %>
+					<tr>
+						<th>投稿日</th>
+						<th width="40%">投稿者</th>
+						<th>タイトル</th>
+					</tr>
 					<% @results.each do |result| %>
 						<tr>
 							<td><%= result.created_at.strftime('%Y/%m/%d') %></td>
 							<td>
-								<%= attachment_image_tag result.user, :user_image, size:"50x50", fallback: "no_image.jpg" %>
-								<%= result.user.name %>
+								<%= attachment_image_tag result.user, :user_image, size:"50x50", class:"img-circle", fallback: "no_image.jpg" %>
+								<%= link_to user_path(result.user) do %>
+									<%= result.user.name %>
+								<% end %>
 							</td>
 							<td>
+								<%= attachment_image_tag result, :post_image, size:"50x50", fallback:"no_image.jpg" %>
 								<%= link_to post_path(result.id) do %>
 									<%= result.title %>
 								<% end %>
@@ -28,6 +30,7 @@
 				<% else %>
 				    <h3>該当する検索結果はありませんでした</h3>
 				<% end %>
+				<%= paginate @results %>
 			</div>
 		</table>
 	</div>

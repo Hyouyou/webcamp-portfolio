@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 	def set_search
 		@search = Post.ransack(params[:q])
-		@results = @search.result
+		@results = @search.result.page(params[:page]).reverse_order
 	end
 	
 	protected

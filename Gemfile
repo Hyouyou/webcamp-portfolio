@@ -15,6 +15,7 @@ gem 'pry-byebug'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'rails-i18n'
+gem 'kaminari','~> 1.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
