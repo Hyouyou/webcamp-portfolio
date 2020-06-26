@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+	context"Commentモデル/データが正しく表示される" do
+		it"Commentモデルのcommentが空でない" do
+			comment = Comment.new
+			comment.comment = ""
+			expect(comment).to be_invalid
+			expect(comment.errors[:comment]).to include("を入力してください")
+		end
+	end
 end

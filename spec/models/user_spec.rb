@@ -18,21 +18,25 @@ RSpec.describe User, type: :model do
 		it"Userモデルのnameが空でない" do
 			@user.name = ""
 			expect(@user).to be_invalid
+			expect(@user.errors[:name]).to include("を入力してください")
 		end
 
 		it"Userモデルのnameが20文字以上でない" do
-			@user.name = ""*21
+			@user.name = "a"*21
 			expect(@user).to be_invalid
+			expect(@user.errors[:name]).to include("は20文字以内で入力してください")
 		end
 
 		it"Userモデルのemailが空でない" do
 			@user.email = ""
 			expect(@user).to be_invalid
+			expect(@user.errors[:email]).to include("を入力してください")
 		end
 
 		it"Userモデルのprofileが225文字以上でない" do
 			@user.profile = "a"*226
 			expect(@user).to be_invalid
+			expect(@user.errors[:profile]).to include("は225文字以内で入力してください")
 		end
 	end
 end
