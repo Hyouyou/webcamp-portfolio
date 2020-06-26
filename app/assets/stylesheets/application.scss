@@ -45,7 +45,7 @@
 	h1{
 		background-color:#00c7ce;
 		margin:0 auto;
-		margin-bottom:10px;
+		margin-bottom:50px;
 		font-family:'YuGothic','HiraKakuProN-W6','Meiryo','sans-serif';
 	}
 }
@@ -86,6 +86,8 @@ footer{
 }
 
 #error-explanation{
+	background-color:#f2dede;
+	border:1px solid #ebccd1;
 	font-size:20px;
-	color:red;
+	color:#a94442;
 }

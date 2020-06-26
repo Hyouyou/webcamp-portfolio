@@ -9,9 +9,16 @@
 }
 
 /*各ページのデータ表示*/
+.new-post-form{
+	margin:0 auto;
+}
+
 .post-show, .post-new, .user-edit, .update-post{
 	padding:5px 0;
 	text-align:center;
+	input[type="text"]{
+		width:40%;
+	}
 }
 
 .single-post{
