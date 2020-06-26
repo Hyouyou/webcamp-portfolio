@@ -6,9 +6,9 @@ class Post < ApplicationRecord
 
 	attachment :post_image
 
-	validates :title, presence: true
+	validates :title, presence: true, length:{maximum: 30}
 	validates :condition, presence: true
-	validates :explanation, presence: true
+	validates :explanation, presence: true, length:{maximum: 225}
 	validates :selling_price, presence: true
 	validates :is_burden, inclusion: [true, false]
 
