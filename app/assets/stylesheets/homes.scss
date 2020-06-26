@@ -13,10 +13,20 @@
 	background-position:center;
 	.search-form{
 		padding-top:140px;
-	}
-	input[type="search"]{
-		height:30px;
-		width:30%;
+		position:relative;
+		.search-btn{
+			position:absolute;
+			right:429px;
+			top:145px;
+			border:none;
+		}
+		.btn{
+			padding:0;
+		}
+		input[type="search"]{
+			height:30px;
+			width:30%;
+		}
 	}
 }
 /*ここまで*/
