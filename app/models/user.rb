@@ -12,8 +12,9 @@ class User < ApplicationRecord
 
 	attachment :user_image
 
-	validates :name, presence: true
+	validates :name, presence: true, length:{maximum: 20}
 	validates :email, presence: true
+	validates :profile, length:{maximum: 225}
 
 	def soft_delete
 		update_attribute(:deleted_at, Time.current)

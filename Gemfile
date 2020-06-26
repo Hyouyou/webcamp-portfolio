@@ -16,6 +16,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'rails-i18n'
 gem 'kaminari','~> 1.2.1'
+gem 'factory_bot_rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
@@ -53,6 +54,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
 end
 
 group :development do
