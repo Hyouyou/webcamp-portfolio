@@ -3,19 +3,24 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
 	let(:user){create(:user)}
 
+	before do
+		@post = Post.new
+		@post.user = user
+		@post.title = "test"
+		@post.condition = "新品や未使用"
+		@post.explanation = "test"
+		@post.selling_price = 100
+		@post.is_burden = true
+	end
+
 	context"Postモデル/データが正しく表示される" do
-		before do
-			@post = Post.new
-			@post.user = user
-			@post.title = "test"
-			@post.condition = "新品や未使用"
-			@post.explanation = "test"
-			@post.selling_price = 100
-			@post.is_burden = true
-		end
+
 		it"全て入力してあるので保存される" do
 			expect(@post).to be_valid
 		end
+	end
+
+	context"バリデーションのテスト" do
 
 		it"Postモデルのtitleが空でない" do
 			@post.title = ""

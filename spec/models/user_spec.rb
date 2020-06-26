@@ -2,18 +2,22 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
+	before do
+		@user = User.new
+		@user.name = "test"
+		@user.email = "test@example.com"
+		@user.profile = "test"
+		@user.password = "password"
+	end
+
 	context"Userモデル/データが正しく表示される" do
-		before do
-			@user = User.new
-			@user.name = "test"
-			@user.email = "test@example.com"
-			@user.profile = "test"
-			@user.password = "password"
-		end
 
 		it"全て入力されているので保存される" do
 			expect(@user).to be_valid
 		end
+	end
+
+	context"バリデーションのテスト" do
 
 		it"Userモデルのnameが空でない" do
 			@user.name = ""
