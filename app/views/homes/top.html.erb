@@ -15,7 +15,7 @@
 </div>
 <div class= "row">
 	<% @posts.each do |post| %>
-		<div class = "randam-contents col-xs-6 col-md-3" style = "padding-left:30px;">
+		<div class = "randam-contents col-xs-6 col-md-3">
 			<div class = "thumbnail">
 				<%= attachment_image_tag post, :post_image, :fill, 200, 200, fallback:"no_image.jpg", class:"img-circle" %>
 				<div class = "caption">
