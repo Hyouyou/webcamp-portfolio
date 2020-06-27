@@ -16,9 +16,12 @@
 		position:relative;
 		.search-btn{
 			position:absolute;
-			right:429px;
+			right:473px;
 			top:145px;
 			border:none;
+			&:focus{
+				outline:0;
+			}
 		}
 		.btn{
 			padding:0;
