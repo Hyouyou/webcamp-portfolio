@@ -1,0 +1,93 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+/*フラッシュ*/
+#flash{
+	text-align:center;
+	.notice{
+		background-color:#00ccff;
+	}
+	.alert{
+		background-color:orange;
+		padding:0;
+		margin-bottom:0;
+		border-radius:0;
+	}
+}
+/*ここまで*/
+
+/*見出し*/
+#head{
+	text-align:center;
+	h1{
+		background-color:#00c7ce;
+		margin:0 auto;
+		margin-bottom:50px;
+		font-family:'YuGothic','HiraKakuProN-W6','Meiryo','sans-serif';
+	}
+}
+/*ここまで*/
+
+/*レイアウト調整*/
+#row{
+	min-height:85vh;
+}
+
+body{
+	width:100%;
+}
+/*ここまで*/
+
+/*ヘッダー・フッター*/
+.navbar-brand{
+	font-family: 'American Typewriter','Arial','Courier','Georgia',sans-serif;
+}
+
+footer{
+	width:100%;
+	height:80px;
+	text-align:center;
+	line-height:80px;
+	background-color:#848282;
+	p{
+		color:#fff;
+		margin:0;
+	}
+}
+/*ここまで*/
+
+#wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#error-explanation{
+	background-color:#f2dede;
+	border:1px solid #ebccd1;
+	font-size:20px;
+	color:#a94442;
+}

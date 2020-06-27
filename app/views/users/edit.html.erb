@@ -1,0 +1,33 @@
+<div id = "row">
+	<div class = "col-xs-offset-4 col-xs-4">
+		<div id = "head">
+			<h1>プロフィール設定</h1>
+		</div>
+		<%= render "layouts/error_message", model:@user %>
+		
+		<div class = "edit-user-form">
+			<%= form_with model:@user, local: true do |f| %>
+				<div class = "prev-image">
+					<div class = "file-img">
+						<%= attachment_image_tag @user, :user_image, :fill, 200, 200, fallback: "no_image.jpg", id:"img-prev" %>
+					</div>
+					<%= f.attachment_field :user_image, id:"user-image" %>
+				</div>
+				<div class = "user-edit">
+					<span class = "name-info">ニックネーム</span>
+					<%= f.text_field :name, autofocus: true, placeholder:"ニックネーム" %>
+				</div>
+				<div class = "user-edit">
+					<%= f.text_area :profile, size:"40x5", autofocus: true, placeholder:"自己紹介" %>
+				</div>
+				<div class = "update-user-btn">
+					<%= f.submit "保存", class:"btn btn-primary" %>
+				</div>
+				|
+				<div class = "hide-user-btn">
+					<%= link_to "退会", user_registration_path, method: :delete, class:"btn btn-danger", data:{confirm:"退会処理を行います。よろしいですか？"} %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

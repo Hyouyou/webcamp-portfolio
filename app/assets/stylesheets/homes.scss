@@ -1,0 +1,171 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*検索と背景*/
+.search-box{
+	width:100%;
+	height:300px;
+	background-image:image-url("shopping.jpg");
+	opacity:0.6;
+	background-size:cover;
+	background-position:center;
+	.search-form{
+		padding-top:140px;
+		position:relative;
+		.search-btn{
+			position:absolute;
+			right:429px;
+			top:145px;
+			border:none;
+		}
+		.btn{
+			padding:0;
+		}
+		input[type="search"]{
+			height:30px;
+			width:30%;
+		}
+	}
+}
+/*ここまで*/
+
+/*サムネイル*/
+.second-top{
+	padding-left:60px;
+	font-family:'Meiryo','sans-serif';
+}
+
+.randam-contents{
+	padding:50px 0;
+	background-color:#eeeeee;
+	padding-left:50px;
+	.thumbnail{
+		width:250px;
+		height:450px;
+		margin:0 auto;
+		border-top-right-radius:45%;
+		border-top-left-radius:45%;
+		.caption{
+			padding:30px 9px 9px 9px;
+			h3{
+				font-family:'YuGothic','HiraKakuProN-W6','Meiryo','sans-serif';
+				text-align:center;
+			}
+			p{
+				margin:10px 0;
+				text-align:center;
+			}
+			dd{
+				text-align:center;
+			}
+			.btn{
+				margin:10px 0 0 60px;
+				p{
+					margin:5px 0;
+				}
+			}
+		}
+	}
+}
+
+/*ここまで*/
+
+/*アイコン*/
+.point{
+	text-align:center;
+	.glyphicon{
+		font-size:60px;
+	}
+	.icon-text{
+		font-size:20px;
+	}
+}
+/*ここまで*/
+
+/* モーダルウィンドウ */
+#modal-area1, #modal-area2, #modal-area3 {
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:10;
+}
+
+.modal-bg {
+  width:100%;
+  height:100%;
+  background-color:rgba(30,30,30,0.9);
+}
+
+.modal-wrapper {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:70%;
+  max-width:500px;
+  padding:10px 30px;
+  background-color:#fff;
+  h1{
+  	font-family: 'American Typewriter','Arial','Courier','Georgia',sans-serif;
+  	color:#00c7ce;
+  }
+  p{
+  	font-family:'YuGothic','HiraKakuProN-W6','Meiryo','sans-serif';
+  	font-size:15px;
+  }
+}
+
+#close-modal1, #close-modal2, #close-modal3{
+  position:absolute;
+  top:0.5rem;
+  right:1rem;
+  cursor:pointer;
+}
+
+#open-modal1, #open-modal2, #open-modal3{
+  width:70px;
+  height:30px;
+  font-size:1.3em;
+  color:#144252;
+  background-color:#FFF;
+  border:solid 2px #144252;
+  border-radius:3px;
+  &:hover{
+	  background:#144252;
+	  color:#FFF;
+	}
+}
+
+.service{
+	margin-bottom:20px;
+}
+/*ここまで*/
+
+/*aboutページの画像*/
+.about-image{
+	height:30em;
+	background-image:image-url("mokume.jpg");
+	background-size:cover;
+	.block{
+		height:30em;
+		background-color:rgba(0,0,0,0.5);
+		h1{
+			margin:0;
+			text-align:center;
+			padding-top:50px;
+			color:#fff;
+		}
+		p{
+			text-align:center;
+			font-size:20px;
+			color:#fff;
+			font-family:'YuGothic','HiraKakuProN-W6','Meiryo','sans-serif';
+		}
+	}
+}
+/*ここまで*/

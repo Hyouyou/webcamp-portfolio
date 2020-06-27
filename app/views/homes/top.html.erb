@@ -1,0 +1,34 @@
+<div class = "row">
+	<div class = "search-box">
+		<%= search_form_for @search, url:search_posts_path do |f| %>
+				<div class = "search-form text-center">
+					<%= f.search_field :title_or_explanation_cont, placeholder: "検索キーワードを入力" %>
+					<%= f.button class: "search-btn btn btn-default" do %>
+						<i class="glyphicon glyphicon-search"></i>
+					<% end %>
+				</div>
+			</form>
+		<% end %>
+	</div>
+</div>
+<div class = "second-top">
+	<h2>(最近の投稿)</h2>
+</div>
+<div class= "row">
+	<% @posts.each do |post| %>
+		<div class = "randam-contents col-xs-6 col-md-3">
+			<div class = "thumbnail">
+				<%= attachment_image_tag post, :post_image, :fill, 200, 200, fallback:"no_image.jpg", class:"img-circle" %>
+				<div class = "caption">
+					<h3><%= post.title %></h3>
+					<p><%= post.created_at.strftime('%Y/%m/%d') %>の投稿</p>
+
+					<%= render 'posts/like', post: post %>
+					<%= link_to post_path(post.id), class:"btn btn-default" do %>
+						<p>詳細を見る<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></p>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

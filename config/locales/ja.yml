@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    models:
+      user: "会員"
+      post: "投稿"
+      comment: "コメント"
+    attributes:
+      user:
+        email: "メールアドレス"
+        encrypted_password: "パスワード"
+        password: "パスワード"
+        name: "ニックネーム"
+        profile: "プロフィール画像"
+        deleted_at: "退会ステータス"
+      post:
+        title: "タイトル"
+        explanation: "説明文"
+        selling_price: "売上高"
+        is_burden: "送料負担"
+        condition: "商品の状態"
+      comment:
+        comment: "コメント"

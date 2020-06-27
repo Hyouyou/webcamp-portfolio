@@ -1,0 +1,52 @@
+<div id = "row">
+	<div id = "head">
+		<h1><%= @user.name %>さんのページ</h1>
+	</div>
+
+	<div class= "col-xs-6 text-center">
+		<div class="user-info">
+			<%= attachment_image_tag @user, :user_image, :fill, 200, 200, fallback: "no_image.jpg" %>
+			<h4 class = "strong"><%= @user.name %></h4>
+			<div class = "user-profile"><%= @user.profile %></div>
+		</div>
+		<% if @user == current_user %>
+			<div class = "edit-user-btn">
+				<%= link_to "変更する", edit_user_path, class:"btn" %>
+			</div>
+		<% end %>
+	</div>
+
+	<div class = "col-xs-6">
+		<div class = "user-post">
+			<table class = "table table-hover">
+				<tr>
+					<th>投稿日</th>
+					<th>タイトル</th>
+					<th></th>
+				</tr>
+
+				<% if @user.posts.present? %>
+					<% @user.posts.each do |post| %>
+						<tr>
+							<td><%= post.created_at.strftime('%Y/%m/%d') %></td>
+							<td>
+								<%= link_to post_path(post.id) do %>
+									<%= post.title %>
+								<% end %>
+							</td>
+							<td>
+								<% if post.user == current_user %>
+									<div class = "post-delete-btn">
+										<%= link_to "delete", post_path(post.id), method: :delete, class: "btn btn-danger", data: {confirm: '投稿を削除します。よろしいですか？'} %>
+									</div>
+								<% end %>
+							</td>
+						</tr>
+					<% end %>
+				<% else %>
+					<h3>まだ投稿はありません</h3>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>

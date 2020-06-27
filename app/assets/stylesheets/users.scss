@@ -1,0 +1,28 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.strong{
+	font-size:20px;
+	font-weight:bold;
+}
+
+.edit-user-form{
+	text-align:center;
+	.update-user-btn, .hide-user-btn{
+		display:inline-block;
+		margin:5px 10px;
+	}
+}
+
+.prev-image{
+	.thumb{
+		width:200px;
+		height:200px;
+	}
+	#user-image{
+		margin:0 auto;
+		padding-top:5px;
+	}
+}
