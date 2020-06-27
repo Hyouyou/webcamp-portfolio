@@ -4,7 +4,7 @@
 	</div>
 	<div class = "col-xs-5 col-xs-offset-1">
 		<div class = "post-show-img text-center">
-			<%= attachment_image_tag @post, :post_image, :fill, 300, 300, fallback: "no_image.jpg" %>
+			<%= attachment_image_tag @post, :post_image, size:"300x300", fallback: "no_image.jpg" %>
 		</div>
 	</div>
 
@@ -42,7 +42,7 @@
 	<div class = "comment-area col-xs-6 col-xs-offset-3">
 		<div class = "profile-area">
 			<h3>投稿者</h3>
-			<%= attachment_image_tag @post.user, :user_image, :fill, 60, 60, fallback:"no_image.jpg", class:"img-circle profile-thumb center-block" %>
+			<%= attachment_image_tag @post.user, :user_image, size:"60x60", fallback:"no_image.jpg", class:"img-circle profile-thumb center-block" %>
 			<%= link_to user_path(@post.user) do %>
 				<p><%= @post.user.name %></p>
 			<% end %>

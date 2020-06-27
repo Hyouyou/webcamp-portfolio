@@ -7,7 +7,7 @@
 		<!--<lavel for = "image">-->
 			<div class = "col-xs-4 col-xs-offset-2 prev-img">
 				<div class = "file-img">
-					<%= attachment_image_tag @post, :post_image, fallback: "no_image.jpg" %>
+					<%= attachment_image_tag @post, :post_image, size:"300x300", fallback: "no_image.jpg" %>
 				</div>
 				<%= f.attachment_field :post_image %>
 			</div>
