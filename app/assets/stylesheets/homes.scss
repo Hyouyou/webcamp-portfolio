@@ -47,6 +47,11 @@
 		margin:0 auto;
 		border-top-right-radius:45%;
 		border-top-left-radius:45%;
+		.top-image{
+			border-radius:50%;
+			height:200px;
+			width:200px;
+		}
 		.caption{
 			padding:30px 9px 9px 9px;
 			h3{
