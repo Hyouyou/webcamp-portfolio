@@ -13,10 +13,20 @@
 	background-position:center;
 	.search-form{
 		padding-top:140px;
-	}
-	input[type="search"]{
-		height:30px;
-		width:30%;
+		position:relative;
+		.search-btn{
+			position:absolute;
+			right:429px;
+			top:145px;
+			border:none;
+		}
+		.btn{
+			padding:0;
+		}
+		input[type="search"]{
+			height:30px;
+			width:30%;
+		}
 	}
 }
 /*ここまで*/
@@ -28,18 +38,34 @@
 }
 
 .randam-contents{
-	padding-top:50px;
+	padding:50px 0;
 	background-color:#eeeeee;
 	padding-left:50px;
 	.thumbnail{
 		width:250px;
 		height:450px;
 		margin:0 auto;
+		border-top-right-radius:45%;
+		border-top-left-radius:45%;
 		.caption{
 			padding:30px 9px 9px 9px;
-		}
-		h3{
-			font-family:'YuGothic','HiraKakuProN-W6','Meiryo','sans-serif';
+			h3{
+				font-family:'YuGothic','HiraKakuProN-W6','Meiryo','sans-serif';
+				text-align:center;
+			}
+			p{
+				margin:10px 0;
+				text-align:center;
+			}
+			dd{
+				text-align:center;
+			}
+			.btn{
+				margin:10px 0 0 60px;
+				p{
+					margin:5px 0;
+				}
+			}
 		}
 	}
 }

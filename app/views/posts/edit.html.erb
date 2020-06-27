@@ -3,7 +3,7 @@
 		<h1>投稿編集</h1>
 	</div>
 	<%= form_with model:@post, local: true do |f| %>
-		<div class = "col-xs-5 col-xs-offset-1 prev-img">
+		<div class = "col-xs-4 col-xs-offset-2 prev-img">
 			<div class = "file-img">
 				<!--<span class = "user-image-info"></span>-->
 				<%= attachment_image_tag @post, :post_image, :fill, 300, 300, fallback: "no_image.jpg" %>
@@ -11,7 +11,7 @@
 			<%= f.attachment_field :post_image %>
 		</div>
 
-		<div class = "col-xs-5">
+		<div class = "col-xs-6 text-center">
 			<%= render "layouts/error_message", model:@post %>
 			<div class = "update-post-form text-center">
 				<div class = "update-post">
@@ -34,7 +34,7 @@
 					<%= f.radio_button :is_burden, false %>購入者負担
 				</div>
 				<div class = "update-post">
-					<span class = "body-info">詳細説明</span>
+					<span class = "body-info"></span>
 					<%= f.text_area :explanation, size: "50x5" %>
 				</div>
 				<div class = "update-post-btn">

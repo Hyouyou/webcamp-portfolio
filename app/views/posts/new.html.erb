@@ -5,7 +5,7 @@
 	</div>
 	<%= form_with model:@post, local: true do |f| %>
 		<!--<lavel for = "image">-->
-			<div class = "col-xs-5 col-xs-offset-1 prev-img">
+			<div class = "col-xs-4 col-xs-offset-2 prev-img">
 				<div class = "file-img">
 					<%= attachment_image_tag @post, :post_image, fallback: "no_image.jpg" %>
 				</div>
@@ -13,7 +13,7 @@
 			</div>
 		<!--</lavel>-->
 
-		<div class = "col-xs-5 text-center">
+		<div class = "col-xs-6 text-center">
 			<%= render "layouts/error_message", model:@post %>
 			<div class = "new-post-form">
 				<div class = "post-new">
