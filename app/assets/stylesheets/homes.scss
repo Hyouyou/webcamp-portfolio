@@ -15,10 +15,12 @@
 		padding-top:140px;
 		position:relative;
 		.search-btn{
-			position:absolute;
-			right:473px;
-			top:145px;
-			border:none;
+		border:1px solid #333;
+			background:#fff;
+			i{
+				font-size:25px;
+				color:#333;
+			}
 			&:focus{
 				outline:0;
 			}

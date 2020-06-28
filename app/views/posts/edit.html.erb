@@ -4,11 +4,10 @@
 	</div>
 	<%= form_with model:@post, local: true do |f| %>
 		<div class = "col-xs-4 col-xs-offset-2 prev-img">
-			<div class = "file-img">
-				<!--<span class = "user-image-info"></span>-->
-				<%= attachment_image_tag @post, :post_image, size:"300x300", fallback: "no_image.jpg" %>
+			<div c;ass = "find-img">
+				<%= attachment_image_tag @post, :post_image, size:"300x300", fallback: "no_image.jpg", id:"post-img" %>
 			</div>
-			<%= f.attachment_field :post_image %>
+			<%= f.attachment_field :post_image, id:"input-img" %>
 		</div>
 
 		<div class = "col-xs-6 text-center">
