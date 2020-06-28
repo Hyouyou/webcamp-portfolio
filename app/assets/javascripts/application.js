@@ -18,20 +18,32 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$(function(){
-	$(document).on('turbolinks:load', () => {
-		
-	    $('form input:file').uploadThumbs();
+$(document).on('turbolinks:load', function(){
 
-		$('#comment-submit').attr('disabled','disabled');
+    //$('form input:file').uploadThumbs();
 
-		$('#comment-text').bind('keydown keyup keypress change', function(){
-			if($(this).val().length > 0) {
-				$('#comment-submit').removeAttr('disabled');
-			} else {
-				$('#comment-submit').attr('disabled','disabled');
-			}
-		});
+	//fileを選択した時に発火
+	$('#input-img').change(function(){
+
+		var file = this.files[0];
+		//Fileオブジェクトの作成
+		var fileReader = new FileReader();
+		fileReader.readAsDataURL(file);
+		//読み込みが完了、srcを書き換え
+		fileReader.onloadend = function() {
+			$('#post-img').attr('src', this.result);
+		}
+	});
+
+
+	$('#comment-submit').attr('disabled','disabled');
+
+	$('#comment-text').bind('keydown keyup keypress change', function(){
+		if($(this).val().length > 0) {
+			$('#comment-submit').removeAttr('disabled');
+		} else {
+			$('#comment-submit').attr('disabled','disabled');
+		}
 	});
 });
 
