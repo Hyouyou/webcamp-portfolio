@@ -25,21 +25,5 @@
 フリマアプリに出品しようか迷っている時
 捨てる予定の物、不必要な物を捨てる時
 
-##使用技術
-###フロントエンド
-・HTML/CSS
-・javaScript/jQuery
-
-###バックエンド
-・Ruby-2.5.7
-・Ruby_on_rails-5.2.4.2
-
-###開発環境
-・vagrant(2.2.4)
-
-###本番環境・デプロイ
-・AWS(EC2,nginx)
-・SQL mysql-0.5.3
-
 ## 機能一覧
 https://docs.google.com/spreadsheets/d/18nNeYdUgj9mBgI17-XtGfY8LJ-8Gch4CczlxL6HYXqo/edit#gid=0
