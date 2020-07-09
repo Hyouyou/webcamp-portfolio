@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 	get '/posts' => 'posts#new'
 
 	resources :users, only:[:show, :edit, :update]
+	resources :res, only:[:new, :show, :create, :edit, :update, :destroy]
 	resources :posts, only:[:new, :show, :create, :edit, :update, :destroy] do
 		resource :likes, only:[:create, :destroy]
 		resources :comments, only:[:create, :destroy]
