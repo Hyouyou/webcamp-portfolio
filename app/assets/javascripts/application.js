@@ -45,5 +45,15 @@ $(document).on('turbolinks:load', function(){
 			$('#comment-submit').attr('disabled','disabled');
 		}
 	});
+
+	$('#tab-contents .tab[id != "tab1"]').hide();
+
+	$('#tab-menu a').click(function(){
+		$("#tab-contents .tab").hide();
+		$("tab-menu .active").removeClass("active");
+		$(this).addClass("active");
+		$($(this).attr("href")).show();
+		event.preventDefault();
+	});
 });
 
