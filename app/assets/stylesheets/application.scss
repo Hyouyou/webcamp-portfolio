@@ -101,7 +101,6 @@ footer{
 /*タブメニュー*/
 .wrap{
 	width:90%;
-	max-width:800px;
 	margin:0 auto;
 	ul{
 		margin-bottom:0;
@@ -130,11 +129,15 @@ footer{
 	color:#000;
 }
 
-#tab-contents .tab{
-	padding:30px;
-	background:#fff;
-	border:1px solid #000;
-	border-top:none;
+#tab-contents{
+	height:600px;
+	width:900px;
+	.tab{
+		padding:30px;
+		background:#fff;
+		border:1px solid #000;
+		border-top:none;
+	}
 }
 
 #tab-contents p{
@@ -143,3 +146,17 @@ footer{
 }
 
 /*ここまで*/
+
+.box1{
+	height:500px;
+	width:400px;
+	background-color:blue;
+	display:inline-block;
+}
+
+.box2{
+	height:500px;
+	width:400px;
+	background-color:orange;
+	display:inline-block;
+}
