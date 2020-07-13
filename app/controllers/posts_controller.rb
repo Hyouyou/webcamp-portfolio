@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @re = Re.new
   end
 
   def create
@@ -50,5 +51,9 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :explanation, :selling_price, :post_image, :condition, :is_burden)
+  end
+
+  def re_params
+    params.require(:re).permit(:title, :value, :content)
   end
 end

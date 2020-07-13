@@ -56,7 +56,7 @@ $.fn.uploadThumbs.run = function (option) {
 		// exclusion control
 		$.fn.uploadThumbs.exclusion.call($self, option, alt);
 		//追記、attachment_tagを削除
-		$('.file-img').remove();
+		//$('.file-img').remove();
 	}
 	//この辺りからuploadが行われる
 	// legacy IE
