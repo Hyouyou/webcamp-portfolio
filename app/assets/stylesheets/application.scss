@@ -100,7 +100,7 @@ footer{
 
 /*タブメニュー*/
 .wrap{
-	width:90%;
+	width:80%;
 	margin:0 auto;
 	ul{
 		margin-bottom:0;
@@ -110,7 +110,7 @@ footer{
 #tab-menu li{
 	float:left;
 	list-style-type:none;
-	width:25%;
+	width:50%;
 }
 
 #tab-menu a{
@@ -122,6 +122,8 @@ footer{
 	background:#000;
 	border:1px solid #000;
 	border-bottom:none;
+	font-size:20px;
+	font-family:'YuGothic','HiraKakuProN-W6','Meiryo','sans-serif';
 }
 
 #tab-menu .active{
@@ -130,10 +132,9 @@ footer{
 }
 
 #tab-contents{
-	height:600px;
-	width:900px;
 	.tab{
-		padding:30px;
+		padding:30px 30px 30px 75px;
+		margin-bottom:50px;
 		background:#fff;
 		border:1px solid #000;
 		border-top:none;
@@ -148,15 +149,13 @@ footer{
 /*ここまで*/
 
 .box1{
-	height:500px;
-	width:400px;
-	background-color:blue;
+	height:350px;
+	width:45%;
 	display:inline-block;
 }
 
 .box2{
-	height:500px;
-	width:400px;
-	background-color:orange;
+	height:350px;
+	width:45%;
 	display:inline-block;
 }
