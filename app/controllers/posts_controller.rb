@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
     if @post.save
       flash[:notice] = "投稿が完了しました"
-        redirect_to user_path(@post.user_id)
+      redirect_to user_path(@post.user_id)
     else
       flash.now[:alert] = "投稿に失敗しました"
       render 'new'
@@ -53,7 +53,4 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :explanation, :selling_price, :post_image, :condition, :is_burden)
   end
 
-  def re_params
-    params.require(:re).permit(:title, :value, :content)
-  end
 end

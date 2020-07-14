@@ -20,8 +20,6 @@
 
 $(document).on('turbolinks:load', function(){
 
-    //$('form input:file').uploadThumbs();
-
 	//fileを選択した時に発火
 	$('#input-img').change(function(){
 
