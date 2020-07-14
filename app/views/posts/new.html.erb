@@ -6,12 +6,12 @@
 	<div class = "wrap">
 		<ul id = "tab-menu" class = "clearfix">
 			<li><a href = "#tab1" class = "active">フリマ経験談</a></li>
-			<li><a href = "#tab2" class = "">tab2</a></li>
+			<li><a href = "#tab2" class = "">リサイクル情報</a></li>
 		</ul>
 
 		<div id = "tab-contents" class = "clearfix">
 			<div id = "tab1" class = "tab">
-				<%= form_with model:@post, local: true do |f| %>
+				<%= form_with model:@post do |f| %>
 					<div class = "box1">
 						<div class = "prev-img">
 							<div class = "file-img">
@@ -57,20 +57,20 @@
 			</div>
 
 			<div id = "tab2" class = "tab">
-				<%= form_with model:@re, local: true do |f| %>
+				<%= form_with model:@re do |f| %>
 					<div class = "box1">
 						<div class = "prev-img">
 							<div class = "file-img">
-								<%= attachment_image_tag @re, :re_image, size:"300x300", fallback: "no_image.jpg", id:"post-img" %>
+								<%= attachment_image_tag @re, :re_image, size:"300x300", fallback: "no_image.jpg", id:"re-img" %>
 							</div>
-							<%= f.attachment_field :re_image, id:"input-img" %>
+							<%= f.attachment_field :re_image, id:"input-image" %>
 						</div>
 					</div>
 
 					<div class = "box2">
 						<%= render "layouts/error_message", model:@re %>
 
-						<div class = "new-post-form text-center">
+						<div class = "new-re-form text-center">
 							<div class = "re-new">
 								<lavel class = "title-info">タイトル</lavel>
 								<%= f.text_field :title %>
