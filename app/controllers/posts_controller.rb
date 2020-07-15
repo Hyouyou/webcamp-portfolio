@@ -13,6 +13,7 @@ class PostsController < ApplicationController
       redirect_to user_path(@post.user_id)
     else
       flash.now[:alert] = "投稿に失敗しました"
+      @re = Re.new
       render 'new'
     end
   end

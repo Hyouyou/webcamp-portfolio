@@ -5,8 +5,9 @@ class ResController < ApplicationController
       flash[:notice] = "投稿が完了しました"
       redirect_to user_path(@re.user_id)
     else
-      flash[:alert] = "投稿に失敗しました"
-      redirect_to new_post_path
+      flash.now[:alert] = "投稿に失敗しました"
+      @post = Post.new
+      render 'posts/new'
     end
   end
 
