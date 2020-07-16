@@ -23,7 +23,7 @@
 					<h3><%= post.title %></h3>
 					<p><%= post.created_at.strftime('%Y/%m/%d') %>の投稿</p>
 
-					<%= render 'posts/like', post: post %>
+					<%= render 'posts/like', model: post %>
 					<%= link_to post_path(post.id), class:"btn btn-default" do %>
 						<p>詳細を見る<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></p>
 					<% end %>

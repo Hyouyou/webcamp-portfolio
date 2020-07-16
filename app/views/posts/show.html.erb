@@ -25,7 +25,7 @@
 				</dd>
 			</dt>
 			<dt class = "post-show">
-				<%= render 'posts/like', post: @post %>
+				<%= render 'posts/like', model: @post %>
 			</dt>
 			<dt class = "post-show">
 				<dd class = "body-show">説明：<%= @post.explanation %></dd>
@@ -80,8 +80,8 @@
 
 		<div class = "invite-box">
 			<% if user_signed_in? %>
-				<%= render "layouts/error_message", model:@re_comment %>
-				<%= form_for [@post, @re_comment] do |f| %>
+				<%= render "layouts/error_message", model:@comment %>
+				<%= form_for [@post, @comment] do |f| %>
 					<div class = "new-comment-form">
 						<%= f.text_area :comment, size: "70x5", placeholder: "質問してみる", id:"comment-text" %>
 					</div>

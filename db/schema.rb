@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_16_001710) do
+ActiveRecord::Schema.define(version: 2020_07_16_084708) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2020_07_16_001710) do
     t.string "comment", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "re_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -26,7 +25,6 @@ ActiveRecord::Schema.define(version: 2020_07_16_001710) do
     t.integer "post_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "re_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -39,24 +37,8 @@ ActiveRecord::Schema.define(version: 2020_07_16_001710) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "selling_price"
-  end
-
-  create_table "re_comments", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "re_id", null: false
-    t.string "body", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "res", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "title", null: false
-    t.string "cycle", default: "0", null: false
-    t.text "content", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "re_image_id"
+    t.boolean "is_status", default: true
+    t.integer "cycle", default: 0
   end
 
   create_table "users", force: :cascade do |t|

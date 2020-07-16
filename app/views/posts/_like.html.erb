@@ -1,13 +1,13 @@
 <% if user_signed_in? %>
-	<% if post.liked_by?(current_user) %>
-		<%= link_to post_likes_path(post), method: :delete do %>
-			<dd><i class = "fas fa-heart" aria-hidden = "true" style = "color:red;"></i><%= post.likes.count %>いいね</dd>
+	<% if model.liked_by?(current_user) %>
+		<%= link_to post_likes_path(model), method: :delete do %>
+			<dd><i class = "fas fa-heart" aria-hidden = "true" style = "color:red;"></i><%= model.likes.count %>いいね</dd>
 		<% end %>
 	<% else %>
-		<%= link_to post_likes_path(post), method: :post do %>
-			<dd><i class = "fas fa-heart" aria-hidden = "true"></i><%= post.likes.count %>いいね</dd>
+		<%= link_to post_likes_path(model), method: :post do %>
+			<dd><i class = "fas fa-heart" aria-hidden = "true"></i><%= model.likes.count %>いいね</dd>
 		<% end %>
 	<% end %>
 <% else %>
-	<dd><i class = "fas fa-heart" aria-hidden = "true" style = "color:red;"></i><%= post.likes.count %>いいねされています</dd>
+	<dd><i class = "fas fa-heart" aria-hidden = "true" style = "color:red;"></i><%= model.likes.count %>いいねされています</dd>
 <% end %>

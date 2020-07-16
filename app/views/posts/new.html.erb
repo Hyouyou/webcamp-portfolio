@@ -13,6 +13,7 @@
 		<div id = "tab-contents" class = "clearfix">
 			<div id = "tab1" class = "tab">
 				<%= form_with model:@post, local: true do |f| %>
+					<%= f.hidden_field :is_status, value: true %>
 					<div class = "box1">
 						<div class = "prev-img">
 							<div class = "file-img">
@@ -56,31 +57,32 @@
 			</div>
 
 			<div id = "tab2" class = "tab">
-				<%= form_with model:@re, local: true do |f| %>
+				<%= form_with model:@post, local: true do |f| %>
+					<%= f.hidden_field :is_status, value: false %>
 					<div class = "box1">
 						<div class = "prev-img">
 							<div class = "file-img">
-								<%= attachment_image_tag @re, :re_image, size:"300x300", fallback: "no_image.jpg", id:"re-img" %>
+								<%= attachment_image_tag @post, :post_image, size:"300x300", fallback: "no_image.jpg", id:"re-img" %>
 							</div>
-							<%= f.attachment_field :re_image, id:"input-image" %>
+							<%= f.attachment_field :post_image, id:"input-image" %>
 						</div>
 					</div>
 
 					<div class = "box2">
-						<div class = "new-re-form text-center">
-							<div class = "re-new">
+						<div class = "new-post-form text-center">
+							<div class = "post-new">
 								<lavel class = "title-info">タイトル</lavel>
 								<%= f.text_field :title %>
 							</div>
-							<div class = "re-new">
+							<div class = "post-new">
 								<lavel class = "value-info">お得情報</lavel>
 								<%= f.select :cycle, Re.cycles.keys %>
 							</div>
-							<div class = "re-new">
+							<div class = "post-new">
 								<lavel class = "body-info"></lavel>
-								<%= f.text_area :content, size: "50x5", placeholder: "詳細な説明" %>
+								<%= f.text_area :explanation, size: "50x5", placeholder: "詳細な説明" %>
 							</div>
-							<div class = "new-re-btn">
+							<div class = "new-post-btn">
 								<%= f.submit "投稿する", class:"btn" %>
 							</div>
 						</div>

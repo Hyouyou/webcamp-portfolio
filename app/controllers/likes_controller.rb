@@ -1,7 +1,5 @@
 class LikesController < ApplicationController
 
-	#いいねはajaxで通信させる
-
 	def create
 		post = Post.find(params[:post_id])
 		like = current_user.likes.new(post_id: post.id)

@@ -3,7 +3,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @re = Re.new
   end
 
   def create
@@ -13,7 +12,6 @@ class PostsController < ApplicationController
       redirect_to user_path(@post.user_id)
     else
       flash.now[:alert] = "投稿に失敗しました"
-      @re = Re.new
       render 'new'
     end
   end
@@ -51,7 +49,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :explanation, :selling_price, :post_image, :condition, :is_burden)
+    params.require(:post).permit(:title, :explanation, :selling_price, :post_image, :condition, :is_burden, :cycle, :is_status)
   end
 
 end
