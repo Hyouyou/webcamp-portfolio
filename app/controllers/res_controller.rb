@@ -11,6 +11,12 @@ class ResController < ApplicationController
     end
   end
 
+  def show
+    @re = Re.find(params[:id])
+    @re_comments = @re.re_comments.page(params[:page]).reverse_order
+    @re_comment = ReComment.new
+  end
+
   def edit
   end
 
@@ -18,9 +24,6 @@ class ResController < ApplicationController
   end
 
   def destroy
-  end
-
-  def show
   end
 
   private
