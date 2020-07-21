@@ -23,6 +23,7 @@
 					<th>投稿日</th>
 					<th>タイトル</th>
 					<th></th>
+					<th></th>
 				</tr>
 
 				<% if @posts.present? %>
@@ -34,6 +35,7 @@
 									<%= post.title %>
 								<% end %>
 							</td>
+							<td><%= render 'posts/badge', model:post%></td>
 							<td>
 								<% if post.user == current_user %>
 									<div class = "post-delete-btn">
