@@ -9,6 +9,7 @@
 						<th>投稿日</th>
 						<th width="40%">投稿者</th>
 						<th>タイトル</th>
+						<th>ジャンル</th>
 					</tr>
 					<% @results.each do |result| %>
 						<tr>
@@ -25,6 +26,7 @@
 									<%= result.title %>
 								<% end %>
 							</td>
+							<td><%= render 'posts/badge', model:result %></td>
 						</tr>
 					<% end %>
 				<% else %>
