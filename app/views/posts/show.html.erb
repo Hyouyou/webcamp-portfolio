@@ -25,7 +25,8 @@
 				</dd>
 			</dt>
 			<dt class = "post-show">
-				<%= render 'posts/like', post: @post %>
+				<%= render 'posts/badge', model:@post %>
+				<%= render 'posts/like', model: @post %>
 			</dt>
 			<dt class = "post-show">
 				<dd class = "body-show">説明：<%= @post.explanation %></dd>
@@ -63,7 +64,7 @@
 								<%= comment.user.name %>さん
 								<% if comment.user == current_user %>
 									<div class = "comment-delete-btn">
-										<%= link_to "delete", post_comment_path(@post, comment.id), method: :delete, class: "btn btn-danger btn-xs", data: {confirm: '質問を削除します。よろしいですか？'}%>
+										<%= link_to "delete", post_comment_path(comment.id), method: :delete, class: "btn btn-danger btn-xs", data: {confirm: '質問を削除します。よろしいですか？'}%>
 									</div>
 								<% end %>
 							</td>

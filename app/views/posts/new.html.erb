@@ -1,49 +1,95 @@
 <div id = "row">
-
 	<div id = "head">
 		<h1>投稿作成</h1>
 	</div>
-	<%= form_with model:@post, local: true do |f| %>
 
-		<div class = "col-xs-4 col-xs-offset-2 prev-img">
-			<div class = "file-img">
-				<%= attachment_image_tag @post, :post_image, size:"300x300", fallback: "no_image.jpg", id:"post-img" %>
+	<%= render 'layouts/error_message', model:@post %>
+	<div class = "wrap">
+		<ul id = "tab-menu" class = "clearfix">
+			<li><a href = "#tab1" class = "active">フリマ経験談</a></li>
+			<li><a href = "#tab2" class = "">リサイクル情報</a></li>
+		</ul>
+
+		<div id = "tab-contents" class = "clearfix">
+			<div id = "tab1" class = "tab">
+				<%= form_with model:@post, local: true do |f| %>
+					<%= f.hidden_field :is_status, value: true %>
+					
+					<div class = "box1">
+						<div class = "prev-img">
+							<div class = "file-img">
+								<%= attachment_image_tag @post, :post_image, size:"300x300", fallback: "no_image.jpg", id:"post-img" %>
+							</div>
+							<%= f.attachment_field :post_image, id:"input-img" %>
+						</div>
+					</div>
+
+					<div class = "box2">
+						<div class = "new-post-form text-center">
+							<div class = "post-new">
+								<lavel class = "title-info">タイトル</lavel>
+								<%= f.text_field :title %>
+							</div>
+							<div class = "post-new">
+								<lavel class = "condition-info">商品状態</lavel>
+								<%= f.select :condition, Post.conditions.keys %>
+							</div>
+							<div class = "post-new">
+								<lavel class = "sales-info">売上高</lavel>
+								<%= f.text_field :selling_price %>円
+							</div>
+							<div class = "post-new">
+								<lavel class = "burden-info">送料負担</lavel>
+								<% label :is_burden, "", value: true %>
+								<%= f.radio_button :is_burden, true %>出品者負担
+								<% label :is_burden, "", value: false %>
+								<%= f.radio_button :is_burden, false %>購入者負担
+							</div>
+							<div class = "post-new">
+								<lavel class = "body-info"></lavel>
+								<%= f.text_area :explanation, size: "50x5", placeholder: "詳細な説明" %>
+							</div>
+							<div class = "new-post-btn">
+								<%= f.submit "投稿する", class:"btn" %>
+							</div>
+						</div>
+					</div>
+				<% end %>
 			</div>
-				<%= f.attachment_field :post_image, id:"input-img" %>
-		</div>
 
+			<div id = "tab2" class = "tab">
+				<%= form_with model:@post, local: true do |f| %>
+					<%= f.hidden_field :is_status, value: false %>
+					<div class = "box1">
+						<div class = "prev-img">
+							<div class = "file-img">
+								<%= attachment_image_tag @post, :post_image, size:"300x300", fallback: "no_image.jpg", id:"re-img" %>
+							</div>
+							<%= f.attachment_field :post_image, id:"input-image" %>
+						</div>
+					</div>
 
-		<div class = "col-xs-6 text-center">
-			<%= render "layouts/error_message", model:@post %>
-			<div class = "new-post-form">
-				<div class = "post-new">
-					<lavel class = "title-info">タイトル</lavel>
-					<%= f.text_field :title %>
-				</div>
-				<div class = "post-new">
-					<lavel class = "condition-info">商品状態</lavel>
-					<%= f.select :condition, Post.conditions.keys %>
-				</div>
-				<div class = "post-new">
-					<lavel class = "sales-info">売上高</lavel>
-					<%= f.text_field :selling_price %>円
-				</div>
-				<div class = "post-new">
-					<lavel class = "burden-info">送料負担</lavel>
-					<% label :is_burden, "", value: true %>
-					<%= f.radio_button :is_burden, true %>出品者負担
-					<% label :is_burden, "", value: false %>
-					<%= f.radio_button :is_burden, false %>購入者負担
-				</div>
-				<div class = "post-new">
-					<lavel class = "body-info"></lavel>
-					<%= f.text_area :explanation, size: "50x5", placeholder: "詳細な説明" %>
-				</div>
-				<div class = "new-post-btn">
-					<%= f.submit "投稿する", class:"btn" %>
-				</div>
+					<div class = "box2">
+						<div class = "new-post-form text-center">
+							<div class = "post-new">
+								<lavel class = "title-info">タイトル</lavel>
+								<%= f.text_field :title %>
+							</div>
+							<div class = "post-new">
+								<lavel class = "value-info">お得情報</lavel>
+								<%= f.select :cycle, Post.cycles.keys %>
+							</div>
+							<div class = "post-new">
+								<lavel class = "body-info"></lavel>
+								<%= f.text_area :explanation, size: "50x5", placeholder: "詳細な説明" %>
+							</div>
+							<div class = "new-post-btn">
+								<%= f.submit "投稿する", class:"btn" %>
+							</div>
+						</div>
+					</div>
+				<% end %>
 			</div>
 		</div>
-	<% end %>
+	</div>
 </div>
-

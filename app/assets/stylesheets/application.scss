@@ -16,12 +16,20 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
 
 
 *{
 	margin:0;
 	padding:0;
 	box-sizing:border-box;
+}
+
+.clearfix:after{
+	content:"";
+	clear:both;
+	display:block;
 }
 
 /*フラッシュ*/
@@ -91,3 +99,73 @@ footer{
 	font-size:20px;
 	color:#a94442;
 }
+
+/*タブメニュー*/
+.wrap{
+	width:80%;
+	margin:0 auto;
+	ul{
+		margin-bottom:0;
+	}
+}
+
+#tab-menu li{
+	float:left;
+	list-style-type:none;
+	width:50%;
+}
+
+#tab-menu a{
+	color:#fff;
+	text-decoration:none;
+	display:block;
+	padding:20px;
+	text-align:center;
+	background:#000;
+	border:1px solid #000;
+	border-bottom:none;
+	font-size:20px;
+	font-family:'YuGothic','HiraKakuProN-W6','Meiryo','sans-serif';
+}
+
+#tab-menu .active{
+	background:#fff;
+	color:#000;
+}
+
+#tab-contents{
+	.tab{
+		padding:30px 30px 30px 75px;
+		margin-bottom:50px;
+		background:#fff;
+		border:1px solid #000;
+		border-top:none;
+	}
+}
+
+#tab-contents p{
+	color:#000;
+	line-height:2.5;
+}
+
+/*ここまで*/
+
+.box1{
+	height:350px;
+	width:45%;
+	display:inline-block;
+}
+
+.box2{
+	height:350px;
+	width:45%;
+	display:inline-block;
+}
+
+/*バッチ*/
+.badge{
+	p{
+		margin:0;
+	}
+}
+/*ここまで*/

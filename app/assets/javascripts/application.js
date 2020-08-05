@@ -20,8 +20,6 @@
 
 $(document).on('turbolinks:load', function(){
 
-    //$('form input:file').uploadThumbs();
-
 	//fileを選択した時に発火
 	$('#input-img').change(function(){
 
@@ -35,6 +33,18 @@ $(document).on('turbolinks:load', function(){
 		}
 	});
 
+	$('#input-image').change(function(){
+
+		var file = this.files[0];
+		//Fileオブジェクトの作成
+		var fileReader = new FileReader();
+		fileReader.readAsDataURL(file);
+		//読み込みが完了、srcを書き換え
+		fileReader.onloadend = function() {
+			$('#re-img').attr('src', this.result);
+		}
+	});
+
 
 	$('#comment-submit').attr('disabled','disabled');
 
@@ -44,6 +54,16 @@ $(document).on('turbolinks:load', function(){
 		} else {
 			$('#comment-submit').attr('disabled','disabled');
 		}
+	});
+
+	$('#tab-contents .tab[id != "tab1"]').hide();
+
+	$('#tab-menu a').click(function(event){
+		$("#tab-contents .tab").hide();
+		$("#tab-menu .active").removeClass("active");
+		$(this).addClass("active");
+		$($(this).attr("href")).show();
+		event.preventDefault();
 	});
 });
 
